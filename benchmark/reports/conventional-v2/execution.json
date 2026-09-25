@@ -1,0 +1,9 @@
+{
+  "environment_variables": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "prior_partial_run": "conventional-v2 stopped before completing any candidate; its exports are not scored evidence.",
+  "scipy_fft_workers": 1,
+  "timing_comparison": "v1 did not pin BLAS thread settings; cross-version timing is descriptive, not a controlled speed comparison."
+}

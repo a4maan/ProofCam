@@ -1,0 +1,269 @@
+{
+  "actual_screenshots": 0,
+  "android_measurements": 0,
+  "candidates": {
+    "qim12_registered": {
+      "embed_and_encode_p95_ms": 85.09103120013602,
+      "extraction_p95_ms_all_inputs_descriptive_only": 70.10955675013975,
+      "max_attempts_observed": 4,
+      "negative_detections": 0,
+      "proposed_numeric_quality_floor_met": true,
+      "recovery_by_transform": {
+        "brightness_m10": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "brightness_p10": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "crop_25_br": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_25_center": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_25_tl": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_50_br": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_50_center": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_50_tl": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_75_br": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_75_center": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_75_tl": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "gamma_08": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "gamma_12": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "jpeg_q50": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "jpeg_q70": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "jpeg_q90": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "metadata_strip": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "original": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "overlay_10": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "resize_1024": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "resize_2048": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "resize_256": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "resize_512": {
+          "correct": 21,
+          "scheduled": 24
+        },
+        "rotate_90": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "rotate_m5": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "rotate_p5": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "synthetic_combined": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "synthetic_screenshot_1024": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "synthetic_screenshot_512": {
+          "correct": 21,
+          "scheduled": 24
+        }
+      },
+      "replay_verified": "First export and five transformed byte hashes, recovered IDs, and search attempts",
+      "ssim_mean": 0.9912650134434493,
+      "ssim_p5": 0.9871411518276599,
+      "total_missing_or_error": 0
+    },
+    "qim20_registered": {
+      "embed_and_encode_p95_ms": 48.66597880063636,
+      "extraction_p95_ms_all_inputs_descriptive_only": 69.9864097500722,
+      "max_attempts_observed": 4,
+      "negative_detections": 0,
+      "proposed_numeric_quality_floor_met": false,
+      "recovery_by_transform": {
+        "brightness_m10": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "brightness_p10": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "crop_25_br": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_25_center": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_25_tl": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_50_br": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_50_center": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_50_tl": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_75_br": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_75_center": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "crop_75_tl": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "gamma_08": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "gamma_12": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "jpeg_q50": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "jpeg_q70": {
+          "correct": 23,
+          "scheduled": 24
+        },
+        "jpeg_q90": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "metadata_strip": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "original": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "overlay_10": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "resize_1024": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "resize_2048": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "resize_256": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "resize_512": {
+          "correct": 21,
+          "scheduled": 24
+        },
+        "rotate_90": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "rotate_m5": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "rotate_p5": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "synthetic_combined": {
+          "correct": 0,
+          "scheduled": 24
+        },
+        "synthetic_screenshot_1024": {
+          "correct": 24,
+          "scheduled": 24
+        },
+        "synthetic_screenshot_512": {
+          "correct": 21,
+          "scheduled": 24
+        }
+      },
+      "replay_verified": "First export and five transformed byte hashes, recovered IDs, and search attempts",
+      "ssim_mean": 0.9788450431414241,
+      "ssim_p5": 0.9671161342943855,
+      "total_missing_or_error": 0
+    }
+  },
+  "cases_per_candidate": 796,
+  "negative_source_candidates": 100,
+  "positive_sources": 24,
+  "status": "tuning_only_no_production_selection",
+  "tests_passed": 40
+}

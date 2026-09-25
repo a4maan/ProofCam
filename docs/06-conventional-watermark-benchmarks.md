@@ -61,3 +61,11 @@ Next research work should address geometric synchronization and reduce embedding
 ## Remaining gates
 
 Continue tuning synchronization and coding, then freeze candidates and search budgets before held-out evaluation. Measure actual screenshots, complete-ID recovery, negative searches under the full declared budget, artifacts, and physical Android latency/memory. Rights and final corpus eligibility remain outstanding from step 5. No support envelope, release threshold, or physical-device result is inferred from this initial experiment.
+
+## Registered-candidate continuation
+
+[The second experiment](../benchmark/REGISTERED.md) tests `qim12_registered` and `qim20_registered`: gentler quantization at coefficient (1,2), plus up to four pixel-only native/rescaled/uniform-border views. It reuses v1's exact tuning sources and full test IDs and keeps all earlier evidence unchanged. Every search attempt and any conflicting recovered IDs are recorded. All 40 tests pass.
+
+This remains a tuning study. Removing an exactly uniform synthetic border is not equivalent to locating media within a real phone UI. Resampling toward the known 1024-pixel tuning scale does not establish support for arbitrary capture dimensions. Actual screenshots, crop/rotation synchronization, and physical Android measurements remain outstanding.
+
+The completed continuation adds **1,592 cases**. `qim12_registered` meets the proposed numerical quality floor on the 24-photo tuning subset (mean SSIM 0.99127, fifth percentile 0.98714). It recovers 24/24 original IDs, 24/24 1024-pixel synthetic screenshots, and 21/24 512-pixel synthetic screenshots. `qim20_registered` gives the same screenshot counts but misses the mean-quality floor. Both have 0/100 negative detections under their declared search, and both still fail all crop/rotation buckets. See the [comparison](../benchmark/reports/conventional-v2/comparison.json) and [protocol/results](../benchmark/REGISTERED.md). No production candidate or real-device support is selected.

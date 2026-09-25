@@ -26,3 +26,5 @@ Next available work: step 6, benchmark conventional watermarks on the tuning spl
 The original specification describes a broader release than the initial Android photo pilot. The product brief records the staged scope and the sharing-policy adjustment agreed during planning.
 
 Step 6 is **in progress**: [conventional watermark experiments](docs/06-conventional-watermark-benchmarks.md) now implement two full-ID DCT baselines and a tuning-only comparison. Physical-device measurements and actual screenshot recovery remain pending.
+
+Step 6 continuation adds [bounded scale and border recovery](benchmark/REGISTERED.md), tested on the same tuning photos and full IDs. Results remain desktop research, with crop/rotation and physical-device qualification outstanding.

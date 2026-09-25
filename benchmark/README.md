@@ -98,3 +98,5 @@ Use the readiness checklist in [goal 5](../docs/05-benchmark-data-and-harness.md
 ## Conventional watermark experiments
 
 See [step 6](../docs/06-conventional-watermark-benchmarks.md) for the two DCT candidates, full payload layout, tuning protocol, and limitations. Run `python3 -m benchmark.conventional --out benchmark/runs/conventional-new-version --limit 24` for a fresh local comparison. These baselines perform one native-geometry extraction attempt and make no screenshot or Android support claim.
+
+The [registered comparison](REGISTERED.md) adds lower-strength QIM and a bounded native/1024-pixel/uniform-border search, using the same tuning inputs and test IDs as v1.
