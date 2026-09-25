@@ -12,7 +12,9 @@ The Android photo pilot targets Android 14+ on existing or freely borrowed hardw
 
 Step 3 is defined in the [threat model, privacy rules, and assurance policy](docs/03-threat-model-and-privacy-policy.md). Security controls are specified but not yet implemented or audited.
 
-Next: step 4, design capture and verification experiences.
+Step 4 is documented in the [capture and verification screen design](docs/04-capture-and-verification-design.md), with a [clickable local prototype](design/prototype.html) and [opening instructions](design/README.md). All prototype behavior is simulated.
+
+Next: step 5, prepare benchmark data and the test harness.
 
 ## Planning references
 
