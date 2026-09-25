@@ -1,0 +1,18 @@
+{
+  "byte_and_manifest_pixel_duplicates": 0,
+  "counts": {
+    "heldout": 1000,
+    "negative": 100,
+    "tuning": 100
+  },
+  "manifest_sha256": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711",
+  "release_blockers": [
+    "Human rights/content/near-duplicate review",
+    "Real-device screenshot matrix",
+    "300000 eligible unmarked-input search evaluation",
+    "Frozen decoder and thresholds"
+  ],
+  "release_ready": false,
+  "source_group_disjoint": true,
+  "unreviewed": 1200
+}

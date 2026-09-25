@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "status": "starter_snapshot_not_release_frozen",
+  "seed": "proofcam-photo-corpus-v1",
+  "manifest_sha256": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711",
+  "metadata_sha256": "ed93a0e121fe345effdfc7359b848dbc64a1ff6778c8c73563157cb500b33a17",
+  "metadata_url": "https://storage.googleapis.com/openimages/2018_04/validation/validation-images-with-rotation.csv",
+  "counts": {
+    "tuning": 100,
+    "heldout": 1000,
+    "negative": 100
+  },
+  "download_failures": [
+    {
+      "source_id": "b7eb9c71700be4d3",
+      "error": "OSError"
+    },
+    {
+      "source_id": "b2faf04ae8d5ffae",
+      "error": "ValueError"
+    },
+    {
+      "source_id": "e23576bde0240d2c",
+      "error": "ValueError"
+    },
+    {
+      "source_id": "8c5957cc9ba43e9f",
+      "error": "ValueError"
+    }
+  ],
+  "limitations": [
+    "License and visual-content review pending",
+    "No real-device screenshots",
+    "Negative pool not certified free of all watermarks",
+    "Not the 300000-input release corpus"
+  ]
+}

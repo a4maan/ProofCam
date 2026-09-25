@@ -1,0 +1,87 @@
+{
+  "candidate_run": false,
+  "case_files_sha256_verified": 232,
+  "corpus_dimensions": {
+    "max_long_edge": 1024,
+    "min_long_edge": 768,
+    "sources_at_least_1024": 1187
+  },
+  "empty_prediction_control": "all scheduled inputs remain missing; no recovery score or false-positive bound",
+  "heldout_model_evaluations": 0,
+  "limitations": [
+    "No candidate recovery, false-positive, mobile timing, or cryptographic acceptance result",
+    "Only 100 unreviewed negative candidates; release target is 300000 inputs",
+    "Actual screenshot and human rights/content/near-duplicate review remain pending",
+    "Acquired CVDF copies top out at 1024 pixels; native 2048-pixel coverage remains pending"
+  ],
+  "metadata_pixel_preservation_checks": 8,
+  "prepared_cases": 232,
+  "prepared_run": {
+    "case_count": 232,
+    "cases_sha256": "20770e2c62771561de100f7aab37b8256bc7b294ca04618af94031037d2a2f0d",
+    "corpus": {
+      "byte_and_manifest_pixel_duplicates": 0,
+      "counts": {
+        "heldout": 1000,
+        "negative": 100,
+        "tuning": 100
+      },
+      "manifest_sha256": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711",
+      "release_blockers": [
+        "Human rights/content/near-duplicate review",
+        "Real-device screenshot matrix",
+        "300000 eligible unmarked-input search evaluation",
+        "Frozen decoder and thresholds"
+      ],
+      "release_ready": false,
+      "source_group_disjoint": true,
+      "unreviewed": 1200
+    },
+    "encoder": {
+      "optimize": false,
+      "progressive": false,
+      "quality": 95,
+      "subsampling": 2
+    },
+    "environment": {
+      "harness_sha256": "a6b015a8ea544ff93929f9f66e2aea6789fd8d367b3c93e655ebdd52a5922c89",
+      "jpeg_library": "6.2",
+      "libjpeg_turbo": "3.1.4.1",
+      "numpy": "2.5.1",
+      "pillow": "12.3.0",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "python": "3.12.3",
+      "scipy": "1.18.0"
+    },
+    "exports_manifest_sha256": null,
+    "limitations": [
+      "Synthetic screens are not actual screenshot evidence",
+      "Research pixel hashes are not production canonicalization",
+      "No decoder/candidate has been run by this command"
+    ],
+    "schema": 1,
+    "source_count": 8,
+    "split": "tuning",
+    "status": "prepared_not_evaluated"
+  },
+  "real_screenshots": 0,
+  "source_count": 8,
+  "split": "tuning",
+  "status": "harness_smoke_passed_not_watermark_evaluation",
+  "test_suite": {
+    "command": "python3 -m unittest discover -s benchmark/tests -v",
+    "result": "passed",
+    "tests": 20
+  },
+  "transform_count": 29,
+  "validation_environment": {
+    "harness_sha256": "00973cc6feab3cc20e62107e9345ce226901843cb42511e0d5a6c90ddecebdf3",
+    "jpeg_library": "6.2",
+    "libjpeg_turbo": "3.1.4.1",
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.18.0"
+  }
+}

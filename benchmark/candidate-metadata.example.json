@@ -1,0 +1,12 @@
+{
+  "candidate": "REPLACE_WITH_CANDIDATE_NAME",
+  "code_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+  "weights_sha256_or_none": "none",
+  "payload_layout": "REPLACE_WITH_BIT_LAYOUT_AND_USABLE_CAPACITY",
+  "ecc": "REPLACE_WITH_ERROR_CORRECTION_CONFIGURATION",
+  "thresholds": {"REPLACE_WITH_DETECTOR_PARAMETERS": 0},
+  "search_budget": {"max_attempts": 32, "max_models": 2, "deadline_ms": 15000},
+  "runtime": "REPLACE_WITH_RUNTIME_AND_VERSION",
+  "device": "REPLACE_WITH_EXACT_DEVICE_OS_BUILD",
+  "license": "REPLACE_WITH_CODE_AND_WEIGHTS_LICENSES"
+}

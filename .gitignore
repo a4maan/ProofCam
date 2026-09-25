@@ -14,3 +14,10 @@ local.properties
 .DS_Store
 Thumbs.db
 ~$*
+
+# Local benchmark media, source metadata, and generated runs
+benchmark/data/
+benchmark/runs/
+__pycache__/
+*.pyc
+.venv/
