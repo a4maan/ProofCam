@@ -10,7 +10,9 @@ Steps 1 and 2 are documented in the [product brief](docs/01-product-brief.md) an
 
 The Android photo pilot targets Android 14+ on existing or freely borrowed hardware. Development uses free tools, local compute, and no paid services. Pilot APKs will be distributed directly; hardware support is limited to configurations actually validated.
 
-Next: step 3, define the threat model and privacy policy.
+Step 3 is defined in the [threat model, privacy rules, and assurance policy](docs/03-threat-model-and-privacy-policy.md). Security controls are specified but not yet implemented or audited.
+
+Next: step 4, design capture and verification experiences.
 
 ## Planning references
 
