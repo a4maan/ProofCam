@@ -6,9 +6,9 @@ This folder is the project working directory. Product documentation, application
 
 ## Current milestone
 
-Steps 1 and 2 are documented in the [product brief](docs/01-product-brief.md) and [pilot scope and feasibility budget](docs/02-pilot-scope-and-budget.md). These are planning decisions; implementation and device validation remain pending.
+Steps 1 and 2 are documented in the [product brief](docs/01-product-brief.md) and [pilot scope and free development](docs/02-pilot-scope-and-free-development.md). These are planning decisions; implementation and device validation remain pending.
 
-The Android photo pilot targets Android 14+, with Galaxy A15 5G, Pixel 8a, and Galaxy S24 reference configurations. The proposed feasibility cash ceiling is $2,000; purchases have not been authorized.
+The Android photo pilot targets Android 14+ on existing or freely borrowed hardware. Development uses free tools, local compute, and no paid services. Pilot APKs will be distributed directly; hardware support is limited to configurations actually validated.
 
 Next: step 3, define the threat model and privacy policy.
 

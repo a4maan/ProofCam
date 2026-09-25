@@ -128,4 +128,6 @@ iPhone, video/audio, browser verification, authenticated video excerpts, editing
 
 The pilot audience, product problem, four core journeys, claim vocabulary, success metrics, and success/failure examples are established above as the project's working baseline. They are product decisions made under the request to proceed, not claims of stakeholder research or security validation.
 
-Step 2 must name reference devices, minimum Android support, accountable owners, budget limits, and the detailed pilot scope. Subsequent gates determine feasibility, threat/assurance policy details, protocol formats, and implementation. No spending, deployment, or release date is authorized or promised by this document.
+Step 2 must name reference devices, minimum Android support, accountable owners, free-resource constraints, and the detailed pilot scope. Subsequent gates determine feasibility, threat/assurance policy details, protocol formats, and implementation. No spending, deployment, or release date is authorized or promised by this document.
+
+The no-cost constraint and revised device/distribution scope in [step 2](02-pilot-scope-and-free-development.md) govern implementation. No paid hardware, compute, hosting, datasets, or store enrollment is planned.
