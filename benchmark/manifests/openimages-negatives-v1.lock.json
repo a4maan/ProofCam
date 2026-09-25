@@ -1,0 +1,61 @@
+{
+  "counts": {
+    "negative": 10000
+  },
+  "exclusions": [
+    {
+      "reason": "ValueError",
+      "source_id": "d3831aa42d49c77f"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "e23576bde0240d2c"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "0937f20ab730f4bd"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "fbe3588f590844bd"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "9479eee43904176f"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "d1e768bb7d35f85f"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "dc979cc4b88ae026"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "25b7dedf541a5e8e"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "3d98e3713783e82d"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "cc92ee0ff2196f3f"
+    },
+    {
+      "reason": "ValueError",
+      "source_id": "74eb7c491624caf5"
+    }
+  ],
+  "limitations": [
+    "All sources remain unreviewed",
+    "No ProofCam watermark added; external marks not ruled out",
+    "Variants do not constitute independent natural sources"
+  ],
+  "manifest_sha256": "e3b03379aefe89d15e3439421cb996b53eca7df55fb6c71ebf34ce0b116b8489",
+  "schema": 1,
+  "seed": "proofcam-negative-expansion-v1",
+  "starter_manifest_sha256": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711",
+  "status": "unreviewed_acquisition_snapshot"
+}

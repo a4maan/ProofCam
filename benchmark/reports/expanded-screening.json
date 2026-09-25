@@ -1,0 +1,33 @@
+{
+  "approved_by_this_scan": 0,
+  "author_split_leakage": 0,
+  "cross_split_candidate_count": 0,
+  "declared_license_counts": {
+    "https://creativecommons.org/licenses/by/2.0/": 11200
+  },
+  "heuristic_flag_counts": {
+    "dark_candidate": 511,
+    "extreme_aspect_ratio_candidate": 27,
+    "low_texture_candidate": 269
+  },
+  "limitations": [
+    "Perceptual hashes are review hints, never integrity claims",
+    "Absence of a pair is not proof of no near-duplicates",
+    "License metadata presence is not source-page/license review",
+    "Darkness is not a verified night-scene label; faces/text/motion require review"
+  ],
+  "manifest_hashes": {
+    "openimages-negatives-v1.jsonl": "e3b03379aefe89d15e3439421cb996b53eca7df55fb6c71ebf34ce0b116b8489",
+    "openimages-starter.jsonl": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711"
+  },
+  "missing_attribution": 0,
+  "near_duplicate_candidates": [],
+  "source_hash_checks": "all_passed",
+  "sources_checked": 11200,
+  "status": "automated_screening_not_human_approval",
+  "thresholds": {
+    "dhash_max_distance": 8,
+    "phash_max_distance": 6
+  },
+  "unreviewed": 11200
+}

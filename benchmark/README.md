@@ -4,11 +4,13 @@ Free, local research tooling for roadmap goal 5. It prepares test inputs and sco
 
 ## Current corpus
 
+Continuation tools are documented in [READINESS.md](READINESS.md): 10,000 additional negative sources, 53 original-resolution variants, a pinned 300,000-case stress recipe plan, paginated review pages, category coverage, and strict screenshot intake.
+
 The locked starter manifest has 1,200 locally downloaded Open Images sources: **100 tuning, 1,000 reserved held-out, and 100 negative candidates**. Each selected source has a different author group. Byte and decoded-pixel duplicates were excluded; visual near-duplicate review remains pending. The manifest preserves author, title, original landing page, dataset-declared license, download URL, dimensions, and SHA-256. Media and generated runs are ignored by Git; only attribution/inventory and reports are committed.
 
 Open Images publishes per-image license and attribution metadata and an official method for retrieving subsets from CVDF. The selected rows declare CC BY 2.0. This is dataset-declared eligibility, not an individual license verification or consent determination. Consult [the official dataset download documentation](https://storage.googleapis.com/openimages/web/download_v7.html) and each manifest entry's source/attribution before redistribution. The sources are unmodified CVDF copies locally; benchmark outputs are derivatives whose operations are recorded.
 
-The acquired copies have long edges of 768–1024 pixels (1,187 are at least 1024). They do not cover native 2048-pixel testing; add freely available higher-resolution sources rather than upscaling.
+The acquired copies have long edges of 768–1024 pixels (1,187 are at least 1024). The starter copies do not cover native 2048-pixel testing. The separate 53-image original-resolution supplement provides an initial native-2048 cohort without upscaling.
 
 **This is not the release corpus.** Rights/content review, category coverage, actual screenshots, and the 300,000-input false-positive suite remain pending. Existing marks on external images have not been manually ruled out. Held-out means reserved from model tuning; the manifest is byte-locked but not approved for final release evaluation. Do not inspect candidate performance on it until candidate, thresholds, and search procedure are frozen.
 
@@ -77,7 +79,7 @@ python3 -m benchmark.harness score benchmark/runs/my-run/cases.jsonl predictions
   --candidate-metadata candidate.json --out benchmark/runs/my-run/results.json
 ```
 
-Reports retain separate transform/device/size/input-kind buckets, complete/missing counts, correct IDs, wrong IDs, detections, p95 full-search time, and Wilson 95% intervals. For a fully evaluated negative bucket with zero detections, report the exact one-sided binomial 95% upper bound `1 - 0.05**(1/N)` and approximate `3/N`. No zero-event bound is issued for incomplete searches. These bounds assume representative independent inputs; variants of one photo are correlated, and the harness never pools all transforms into a fake 300,000-independent-source result. Wrong-record lookup and false cryptographic acceptance are explicitly **not measured** by this detector harness.
+Reports retain separate transform/device/size/input-kind buckets, complete/missing counts, correct IDs, wrong IDs, detections, p95 full-search time, and Wilson 95% intervals. For a fully evaluated negative bucket with zero detections, report the exact one-sided binomial 95% upper bound `1 - 0.05**(1/N)` and approximate `3/N`. No zero-event bound is issued for incomplete searches or buckets containing repeated source groups/byte-identical inputs. Actual screenshot buckets additionally separate capture device, display scale, and region-selection mode. These bounds assume representative independent inputs; variants of one photo are correlated, and the harness never pools all transforms into a fake 300,000-independent-source result. Wrong-record lookup and false cryptographic acceptance are explicitly **not measured** by this detector harness.
 
 ## Quality comparisons
 

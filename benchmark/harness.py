@@ -258,7 +258,7 @@ def build(args):
             media_edge = min(int(case.split('_')[-1]), max(decode(data).size)) if case.startswith('synthetic_screenshot_') else max(image.size)
             size_bucket = 'synthetic-composite' if case=='synthetic_combined' else '1024+' if media_edge>=1024 else '512-1023' if media_edge>=512 else 'below-512'
             cases.append({'case_id':item['id']+'__'+case,'source_id':item['id'],
-                          'split':item['split'],'device':args.device,'source_capture_device':item['device'],'transform':case,
+                          'split':item['split'],'source_group':item['source_group'],'device':args.device,'source_capture_device':item['device'],'transform':case,
                           'kind':kind,'expected_id':expected,'path':target.name,
                           'sha256':digest(transformed),'pixel_sha256':pixel_hash(image),
                           'baseline_sha256':digest(data),'width':image.width,'height':image.height,
@@ -318,9 +318,10 @@ def score(cases, predictions):
     buckets={}
     for c in cases:
         # Keep transform, device, and kind separate; never average away a failing bucket.
-        key=(c['transform'],c['device'],c['kind'],c.get('size_bucket','unspecified'))
-        b=buckets.setdefault(key,{'n':0,'complete':0,'correct_id':0,'wrong_id':0,'detected':0,'missing_or_error':0,'latencies':[],'sources':set()})
-        b['n']+=1;b['sources'].add(c['source_id']);p=pred.get(c['case_id'])
+        key=(c['transform'],c['device'],c['kind'],c.get('size_bucket','unspecified'),
+             c.get('capture_device','not_applicable'),c.get('region_selection','not_applicable'),c.get('display_scale_percent','not_applicable'))
+        b=buckets.setdefault(key,{'n':0,'complete':0,'correct_id':0,'wrong_id':0,'detected':0,'missing_or_error':0,'latencies':[],'sources':set(),'byte_hashes':set()})
+        b['n']+=1;b['sources'].add(c.get('source_group',c['source_id']));b['byte_hashes'].add(c.get('sha256',c['case_id']));p=pred.get(c['case_id'])
         if p and (p['detected'] or p['decoded_ids']): b['detected']+=1
         if p and any(i!=c['expected_id'] for i in p['decoded_ids']): b['wrong_id']+=1
         complete=p and p['status']=='ok' and p['search_complete']
@@ -329,14 +330,17 @@ def score(cases, predictions):
         # Ambiguous results containing a wrong ID are not counted as successful recovery.
         if c['expected_id'] and set(p['decoded_ids'])=={c['expected_id']}: b['correct_id']+=1
     report=[]
-    for (transform_name,device,kind,size_bucket),b in sorted(buckets.items()):
-        source_count=len(b.pop('sources'));times=b.pop('latencies')
-        b.update(transform=transform_name,device=device,kind=kind,size_bucket=size_bucket,unique_sources=source_count,
+    for (transform_name,device,kind,size_bucket,capture_device,region_selection,display_scale),b in sorted(buckets.items(),key=lambda item:str(item[0])):
+        source_count=len(b.pop('sources'));times=b.pop('latencies');unique_bytes=len(b.pop('byte_hashes'))
+        distinct_units=source_count==b['n'] and unique_bytes==b['n']
+        b.update(transform=transform_name,device=device,kind=kind,size_bucket=size_bucket,unique_sources=source_count,unique_input_hashes=unique_bytes,
+                 repeated_sources_or_bytes=not distinct_units,
+                 capture_device=capture_device,region_selection=region_selection,display_scale_percent=display_scale,
                  latency_p95_ms=float(np.percentile(times,95)) if times else None,
                  recovery_rate=b['correct_id']/b['n'] if kind=='watermarked_candidate' else None,
-                 recovery_wilson95=wilson(b['correct_id'],b['n']) if kind=='watermarked_candidate' else None)
-        b['detection_wilson95']=wilson(b['detected'],b['n']) if kind=='negative_candidate' and b['complete']==b['n'] else None
-        b['zero_detection_upper95']=zero_upper(b['n']) if kind=='negative_candidate' and b['complete']==b['n'] and b['detected']==0 else None
+                 recovery_wilson95=wilson(b['correct_id'],b['n']) if kind=='watermarked_candidate' and distinct_units else None)
+        b['detection_wilson95']=wilson(b['detected'],b['n']) if kind=='negative_candidate' and distinct_units and b['complete']==b['n'] else None
+        b['zero_detection_upper95']=zero_upper(b['n']) if kind=='negative_candidate' and distinct_units and b['complete']==b['n'] and b['detected']==0 else None
         b['approx_3_over_n']=3/b['n'] if b['zero_detection_upper95'] is not None else None
         report.append(b)
     return {'status':'research_only_not_release_certification','buckets':report,

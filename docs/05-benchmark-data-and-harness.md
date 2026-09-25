@@ -2,17 +2,19 @@
 
 Date: September 25, 2026
 
-Status: Harness and starter acquisition delivered; full corpus readiness **in progress**.
+Status: Harness, expanded acquisition, review tooling, and screenshot intake delivered; full corpus readiness **in progress**.
 
 ## Delivered
 
 - A local Python harness with pinned dependencies, bounded image inputs, deterministic preprocessing and 29 transforms, run fingerprints, candidate-output manifests, strict prediction validation, quality metrics, and per-transform/device/size reports.
 - 1,200 locally downloaded Open Images source files: **100 tuning, 1,000 reserved held-out, 100 negative candidates**. Different author groups are assigned to separate splits; one image per author is selected. Byte/decoded-pixel duplicates were excluded. The manifest is content-locked and records download exclusions.
+- Continuation: **10,000 additional negative-source candidates** are now downloaded and locked, bringing the distinct-source total to **11,200** (100 tuning, 1,000 held-out, 10,100 negative). A separate supplement contains **53 native 2048+ resolution variants** of starter sources: 9 tuning, 42 held-out, and 2 negative; variants are not extra independent images.
+- A code/source-pinned **300,000-case negative stress plan** (30 variants of each of the 10,000 additional sources), with streaming generation and a 120-case materialized sample. This is a recipe count, not 300,000 independent natural photographs or completed evaluations.
 - Per-image title, author, source URL, dataset-declared CC BY 2.0 license, dimensions, and hashes in the committed inventory. Open Images documents these fields and official subset downloads in its [download guide](https://storage.googleapis.com/openimages/web/download_v7.html). Individual rights and content review is still pending.
-- A screenshot-intake schema for actual captures, a candidate metadata template, and a tested scoring contract that keeps unsuccessful and missing cases in the denominator.
+- A screenshot-intake schema and validator for actual captures, a candidate metadata template, and a tested scoring contract that keeps unsuccessful and missing cases in the denominator.
 - An end-to-end tuning smoke run; no watermark model or production verifier is claimed. Downloaded media, metadata caches, and generated runs stay local and are ignored by Git.
 
-See [benchmark instructions](../benchmark/README.md), [corpus audit](../benchmark/reports/corpus-audit.json), and [smoke report](../benchmark/reports/harness-smoke.json). No paid data, compute, hardware, hosting, or services were used.
+See [benchmark instructions](../benchmark/README.md), [continuation tooling](../benchmark/READINESS.md), the [starter audit](../benchmark/reports/corpus-audit.json), [expanded screening](../benchmark/reports/expanded-screening.json), and [continuation validation](../benchmark/reports/step05-continuation.json). No paid data, compute, hardware, hosting, or services were used.
 
 ## Dataset separation and freeze policy
 
@@ -27,12 +29,12 @@ Once candidate code, weights, payload/ECC, thresholds, and search limits are fro
 | Required area | Current state | Completion evidence |
 | --- | --- | --- |
 | At least 1,000 held-out varied photos | 1,000 reserved downloaded candidates | Approved content/rights inventory and source-disjoint release lock |
-| Low texture, text, faces, night scenes, gradients, extreme aspect ratios | Source images acquired; tags not manually reviewed | Category labels and denominators; no favorable aggregate hides a weak category |
+| Low texture, text, faces, night scenes, gradients, extreme aspect ratios | Dataset human annotations identify held-out faces (78), text (17), night (5), darkness (10), and panorama (1); automated screening flags review candidates; local review pending | Category labels and denominators; no favorable aggregate hides a weak category |
 | Motion-related image difficulty | Unreviewed still-photo candidates | Motion blur and moving subjects tagged in the photo corpus; video remains outside this pilot |
 | Tuning separation | 100 sources, author-disjoint from held-out and negative pools | Locked source/author/byte checks; near-duplicate review |
-| Negative inputs | 100 candidates downloaded, no ProofCam watermark added | Validate candidate-specific unmarked status and grow to at least 300,000 eligible inputs for final QA3 |
-| Native 2048-pixel cases | Downloaded CVDF copies have long edges of 768–1024 pixels; 1,187 are at least 1024 | Acquire freely licensed higher-resolution sources or qualified device captures; do not upscale to manufacture eligibility |
-| Real screenshots | None collected | Actual Android/iPhone/desktop screenshot files linked to parent watermarked exports, with device/app/scale/media-size metadata |
+| Negative inputs | 10,100 natural-source candidates downloaded; 300,000 correlated stress recipes pinned for the 10,000-source expansion; 120 generated/checked | Validate unmarked status, distinct-byte counts and source diversity before final QA3; no pooled independent-sample bound from correlated variants |
+| Native 2048-pixel cases | 53 original-resolution variants verified against upstream version digests; two tuning originals exercised across 58 cases | Expand resolution coverage if the final matrix needs more sources; source CDN throttling/failed URLs are recorded; never upscale to manufacture eligibility |
+| Real screenshots | No physical evidence collected; strict importer implemented and tested | Actual Android/iPhone/desktop screenshot files linked to parent watermarked exports, with device/app/scale/media-size metadata |
 | Automatic and manual region selection | Only synthetic screen/crop plumbing available | Separate measured automatic-region success and recovery after actual region selection |
 | Real combined edits | Synthetic chain implemented only | Actual screenshot → 75% crop → 1024 resize → pinned Q70 pipeline |
 | Android timing and memory | No available physical device run yet | Exact device/OS/app/runtime records; p95 finalization/search, peak memory, energy/thermal observations |
@@ -54,9 +56,19 @@ JPEG quality numbers are pinned to the recorded encoder. Synthetic screenshot ca
 Goal 5 remains **In progress** because its original completion criterion includes preparation of the full release evaluation data, not just a functioning harness. Remaining work is explicit:
 
 1. Review the downloaded image rights, content categories, and near-duplicate contamination before final corpus approval.
-2. Expand and approve the negative suite to 300,000 inputs using free sources, retaining source groups and distinguishing natural diversity from correlated derived inputs. The current 100-source pool does not satisfy that gate.
-3. Add native higher-resolution sources for the 2048-pixel cases; these CVDF copies cannot qualify through upscaling.
+2. Approve negative eligibility and evaluate distinct inputs across the pinned stress suite; supplement independent natural-source diversity as needed. The 300,000 recipe count alone does not satisfy an independent-input statistical claim. No decoder has been evaluated.
+3. Review the 53 original-resolution variants and decide whether each final device/transform bucket has adequate coverage. Resume additional original-source acquisition only when the source permits it; do not bypass throttling.
 4. Collect actual screenshots on freely available devices after a candidate embeds the target IDs; retain the intake metadata and untouched screenshot bytes.
 5. Freeze the final corpus and candidate/search configuration before release evaluation. Record any support-envelope change if required resources are unavailable.
 
 Goal 6 can begin conventional watermark experiments on the 100 tuning images now, while corpus review and expansion continue. No user media needs to be uploaded, and no measurement in this step establishes screenshot robustness, production security, or mobile performance.
+
+## Continuation validation
+
+All **32 tests** pass. The expanded screening checked hashes/attribution fields on all 11,200 distinct sources and found zero candidate pairs at its chosen combined dHash/pHash thresholds; this does not prove all near-duplicates absent. No image was automatically approved. Perceptual fingerprints remain local and never feed integrity results.
+
+A 120-case negative sample had 120 distinct byte hashes, and a replay reproduced the checked output hashes. Two native 2048-pixel tuning sources generated 58 checked cases. Confidence intervals are suppressed for repeated source groups or byte-identical inputs within a bucket. Screenshot results separate capture device, display scale, and region-selection mode.
+
+The [category coverage report](../benchmark/reports/category-coverage-v1/summary.json) preserves the provenance of imported dataset human labels. Absence of an annotation means unknown. It does not imply absence of faces/text or replace license, consent, category, or scene review. Source annotation files and vocabulary hashes are recorded.
+
+A paginated local review tool is available at `benchmark/data/review-expanded-v1/index.html`. Reviewers can export decisions without network access or silently modifying frozen manifests. Physical screenshot collection remains dependent on available devices and candidate watermarked exports; neither is fabricated by the harness.

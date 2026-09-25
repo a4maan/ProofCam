@@ -14,7 +14,7 @@ Step 3 is defined in the [threat model, privacy rules, and assurance policy](doc
 
 Step 4 is documented in the [capture and verification screen design](docs/04-capture-and-verification-design.md), with a [clickable local prototype](design/prototype.html) and [opening instructions](design/README.md). All prototype behavior is simulated.
 
-Step 5 has a working [benchmark harness](benchmark/README.md) and 1,200-source starter corpus. Its [readiness record](docs/05-benchmark-data-and-harness.md) remains **in progress**: review, actual screenshots, and the full negative corpus are still pending.
+Step 5 now has a working [benchmark harness](benchmark/README.md), **11,200 distinct source images**, 53 native-2048+ resolution variants, and a 300,000-case negative stress recipe plan. The [readiness record](docs/05-benchmark-data-and-harness.md) remains **in progress**: local corpus approval, actual screenshots, and final evaluation eligibility remain pending. Stress variants are not independent new photographs.
 
 Next available work: step 6, benchmark conventional watermarks on the tuning split while completing corpus readiness.
 

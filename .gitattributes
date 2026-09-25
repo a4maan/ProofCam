@@ -1,0 +1,7 @@
+# Keep content locks and generator hashes stable across Windows/Linux checkouts.
+* text=auto eol=lf
+*.docx binary
+*.xlsx binary
+*.jpg binary
+*.jpeg binary
+*.png binary
