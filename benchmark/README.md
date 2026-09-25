@@ -1,6 +1,6 @@
 # Photo benchmark harness
 
-Free, local research tooling for roadmap goal 5. It prepares test inputs and scores externally supplied decoder results. It contains **no watermark algorithm, production canonicalizer, attestation client, or cryptographic verifier**.
+Free, local research tooling for roadmap goals 5–6. The harness prepares inputs and scores decoder results; two experimental conventional watermark candidates are now available. It contains **no production canonicalizer, attestation client, or cryptographic verifier**.
 
 ## Current corpus
 
@@ -94,3 +94,7 @@ Use equal-size final exports with identical encoder settings; only watermark emb
 `screenshot-intake.csv` is a blank intake schema, not fabricated evidence. Each actual screenshot must retain parent source/asset ID, split, byte hash, device/OS/app versions, display scale, media size, borders, crop-selection method, and permission basis. Screenshots of the same source stay in its split. Capture the selected watermarked export through a real display pipeline after goal 6; no screen can contain a candidate watermark before that candidate exists.
 
 Use the readiness checklist in [goal 5](../docs/05-benchmark-data-and-harness.md). Do not mark release gates passed merely because unit tests or harness smoke runs pass.
+
+## Conventional watermark experiments
+
+See [step 6](../docs/06-conventional-watermark-benchmarks.md) for the two DCT candidates, full payload layout, tuning protocol, and limitations. Run `python3 -m benchmark.conventional --out benchmark/runs/conventional-new-version --limit 24` for a fresh local comparison. These baselines perform one native-geometry extraction attempt and make no screenshot or Android support claim.

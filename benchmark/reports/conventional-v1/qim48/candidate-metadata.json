@@ -1,0 +1,30 @@
+{
+  "candidate": "qim48",
+  "code_revision": "sha256:256a8e29dd6b5443787b9c9017aa6d7ecfb8a144e71070584b14c8015b6cbc08",
+  "cpu_model": "Intel(R) Core(TM) Ultra 7 155H",
+  "device": "desktop-research-Linux-x86_64",
+  "ecc": "176-bit frame repeated over raster-order blocks; hard majority, reject ties; at least 3 complete repetitions",
+  "license": "Original ProofCam implementation; repository outbound license not declared. Installed NumPy/SciPy/Pillow license-file inventory recorded separately. Redistribution review pending.",
+  "payload_layout": "16-bit PC marker + 128-bit test record ID + 32-bit CRC32; no production issuer routing",
+  "runtime": {
+    "harness_sha256": "682386247bbccb49d713f7b6e1d787c4269160d43ed6475179c132020d48dbb8",
+    "jpeg_library": "6.2",
+    "libjpeg_turbo": "3.1.4.1",
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.18.0"
+  },
+  "search_budget": {
+    "deadline": "none; synchronous offline research run",
+    "geometry": "native dimensions, origin aligned, no registration search",
+    "max_attempts": 1,
+    "max_models": 1
+  },
+  "thresholds": {
+    "method": "qim",
+    "strength": 48.0
+  },
+  "weights_sha256_or_none": "none"
+}

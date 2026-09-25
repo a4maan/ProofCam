@@ -1,0 +1,31 @@
+{
+  "actual_screenshots": 0,
+  "android_measurements": 0,
+  "candidates": {
+    "pair24": {
+      "embed_and_encode_p95_ms": 52.4977742995361,
+      "negative_detections": 0,
+      "original_complete_id_recovery": 24,
+      "proposed_numeric_quality_floor_met": false,
+      "replay_verified": "First export and four transformed byte hashes",
+      "ssim_mean": 0.955948992855284,
+      "ssim_p5": 0.9388694303682562,
+      "total_missing_or_error": 1
+    },
+    "qim48": {
+      "embed_and_encode_p95_ms": 40.81403329910244,
+      "negative_detections": 0,
+      "original_complete_id_recovery": 23,
+      "proposed_numeric_quality_floor_met": false,
+      "replay_verified": "First export and four transformed byte hashes",
+      "ssim_mean": 0.8960282742023048,
+      "ssim_p5": 0.8408978713103603,
+      "total_missing_or_error": 1
+    }
+  },
+  "cases_per_candidate": 796,
+  "negative_source_candidates": 100,
+  "positive_sources": 24,
+  "status": "initial_tuning_only_no_candidate_selected",
+  "tests_passed": 37
+}
