@@ -6,9 +6,11 @@ This folder is the project working directory. Product documentation, application
 
 ## Current milestone
 
-Step 1 — Define the product and pilot audience — is documented in [the product brief](docs/01-product-brief.md). Its decisions are the working product baseline; user research, feasibility benchmarks, and implementation have not yet been performed.
+Steps 1 and 2 are documented in the [product brief](docs/01-product-brief.md) and [pilot scope and feasibility budget](docs/02-pilot-scope-and-budget.md). These are planning decisions; implementation and device validation remain pending.
 
-Next: step 2, freeze pilot scope, reference devices, owners, and the feasibility budget.
+The Android photo pilot targets Android 14+, with Galaxy A15 5G, Pixel 8a, and Galaxy S24 reference configurations. The proposed feasibility cash ceiling is $2,000; purchases have not been authorized.
+
+Next: step 3, define the threat model and privacy policy.
 
 ## Planning references
 
