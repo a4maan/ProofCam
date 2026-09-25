@@ -1,0 +1,29 @@
+{
+  "source_manifest_sha256": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711",
+  "review_sha256": "dc2a30e1d5804abd949ee60579eee9485794df7bf285a8275a1b4dc1cf6b0c03",
+  "reviewed_tuning_sources": 100,
+  "recommended_cohorts": {
+    "primary_photo_candidate": 92,
+    "processed_photo_stress": 3,
+    "artwork_stress": 2,
+    "composite_stress": 1,
+    "document_stress": 1,
+    "rendered_stress": 1
+  },
+  "observed_tag_counts_non_exhaustive": {
+    "visible_text": 26,
+    "smooth_background_or_gradient": 19,
+    "faces": 17,
+    "visible_existing_mark": 5,
+    "motion_blur_candidate": 3,
+    "screen_in_scene": 1,
+    "low_light_scene": 3,
+    "border_or_inset": 2,
+    "artwork_in_scene": 2,
+    "product_cutout_appearance": 1,
+    "composite_or_graphic": 3
+  },
+  "rights_approved_sources": 0,
+  "release_ready": false,
+  "limitation": "AI visual screening only; recommendations do not modify source manifests or approve rights, authenticity, or release eligibility."
+}

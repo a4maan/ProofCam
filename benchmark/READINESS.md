@@ -79,3 +79,16 @@ python3 -m benchmark.coverage benchmark/manifests/openimages-starter.jsonl \
 ```
 
 The source URLs are recorded in the report and listed by the [official download guide](https://storage.googleapis.com/openimages/web/download_v7.html). Fetch those free CSVs into the indicated local metadata directory before reproducing the coverage import. Faces/text/night tags come from the dataset; low texture, gradients, motion blur, and final category approval remain local-review work.
+
+## Recorded tuning visual review
+
+[The versioned review](reviews/tuning-visual-v1.json) records AI visual screening of all 100 tuning sources, using contact sheets with three source-resolution spot checks. It recommends 92 primary-photo candidates and eight separate stress examples: three processed/bordered photos, two artwork scenes, one collage, one magazine cover, and one rendered graphic. Five sources have observed visible marks or date stamps; that count is not an exhaustive watermark audit. Missing tags mean unknown.
+
+Validate the complete review against the frozen manifest and individual source hashes:
+
+```sh
+python3 -m benchmark.visual_review benchmark/manifests/openimages-starter.jsonl \
+  benchmark/reviews/tuning-visual-v1.json
+```
+
+The validator rejects incomplete reviews, duplicate decisions, changed source references, cross-split decisions, and approval claims. It verifies the sidecar's references against the locked manifest; use the existing corpus audit to verify local media bytes. The [summary](reports/tuning-visual-v1.json) pins both inputs. Recommendations do not automatically filter harness runs: select a separately versioned cohort when preparing experiments. The source snapshots and existing negative stress plan remain unchanged. No rights approval, human review, authenticity determination, or held-out visual review is claimed.

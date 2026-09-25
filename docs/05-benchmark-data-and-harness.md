@@ -65,10 +65,16 @@ Goal 6 can begin conventional watermark experiments on the 100 tuning images now
 
 ## Continuation validation
 
-All **32 tests** pass. The expanded screening checked hashes/attribution fields on all 11,200 distinct sources and found zero candidate pairs at its chosen combined dHash/pHash thresholds; this does not prove all near-duplicates absent. No image was automatically approved. Perceptual fingerprints remain local and never feed integrity results.
+All **34 tests** pass. The expanded screening checked hashes/attribution fields on all 11,200 distinct sources and found zero candidate pairs at its chosen combined dHash/pHash thresholds; this does not prove all near-duplicates absent. No image was automatically approved. Perceptual fingerprints remain local and never feed integrity results.
 
 A 120-case negative sample had 120 distinct byte hashes, and a replay reproduced the checked output hashes. Two native 2048-pixel tuning sources generated 58 checked cases. Confidence intervals are suppressed for repeated source groups or byte-identical inputs within a bucket. Screenshot results separate capture device, display scale, and region-selection mode.
 
 The [category coverage report](../benchmark/reports/category-coverage-v1/summary.json) preserves the provenance of imported dataset human labels. Absence of an annotation means unknown. It does not imply absence of faces/text or replace license, consent, category, or scene review. Source annotation files and vocabulary hashes are recorded.
 
 A paginated local review tool is available at `benchmark/data/review-expanded-v1/index.html`. Reviewers can export decisions without network access or silently modifying frozen manifests. Physical screenshot collection remains dependent on available devices and candidate watermarked exports; neither is fabricated by the harness.
+
+## Tuning content review continuation
+
+AI visual screening now covers all 100 tuning sources; three ambiguous examples also received source-resolution inspection. The [review decisions](../benchmark/reviews/tuning-visual-v1.json) recommend 92 primary-photo candidates and eight separately tracked stress examples. Five visible marks/date stamps were observed. These recommendations preserve the original locked sources and splits and do not approve licenses or certify absence of watermarks.
+
+The review validator checks completeness, unique decisions, source hashes, tuning-only scope, and the explicit absence of release/rights approval. Its [report](../benchmark/reports/tuning-visual-v1.json) pins the review and source manifest. Held-out/negative visual review, rights review, and actual screenshot evidence remain outstanding; goal 5 is still In progress.

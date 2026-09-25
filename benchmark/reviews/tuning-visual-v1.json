@@ -1,0 +1,1157 @@
+{
+  "schema_version": 1,
+  "source_manifest": "manifests/openimages-starter.jsonl",
+  "source_manifest_sha256": "13ae4b834461af4764f1270c6dbfb12e35f05b110cb24187fbe0aae06305e711",
+  "reviewer": "Codex",
+  "review_method": "AI visual screening",
+  "review_date": "2026-09-25",
+  "scope": "100 tuning images inspected in 25-image contact sheets; source-resolution spot checks on indices 32, 59, and 99. Held-out and negative images were not visually reviewed in this pass. Tags are non-exhaustive visual observations, not certified categories.",
+  "rights_review": "not_performed",
+  "release_approved": false,
+  "decisions": [
+    {
+      "id": "oi-016b7e5c231d8ac5",
+      "source_sha256": "a623ae7452716bc364bd267876f325013fe68de7b4f576e0c2ac297502927cee",
+      "split": "tuning",
+      "contact_sheet_index": 1,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-0231f3d9cfa79b30",
+      "source_sha256": "5afdf48bcf031287359cd8c9af1c1bcf1a88826e93760af45d573342870b174d",
+      "split": "tuning",
+      "contact_sheet_index": 2,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-04acaea66fb2a25a",
+      "source_sha256": "bf9007c9423a4512899c16eca0810600061fb2565d403d073ae8445d8b04f0c3",
+      "split": "tuning",
+      "contact_sheet_index": 3,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-0862df905f78db3a",
+      "source_sha256": "0dedb39f451354286671d7a0335a2e56101602391acbba552fab994b57d067bc",
+      "split": "tuning",
+      "contact_sheet_index": 4,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text",
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-095379f4d62a5ca7",
+      "source_sha256": "5ad5f706fbcee2e40f0769008d8b34e16c10cd55ef6cb9c9cafee76f20ab049a",
+      "split": "tuning",
+      "contact_sheet_index": 5,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-0af4d66572273aaf",
+      "source_sha256": "9b0e4534dc6bd4885d35430a348f412031dbacce126c63c7fc8929bec4c9bc82",
+      "split": "tuning",
+      "contact_sheet_index": 6,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-0d5f138d90a24d01",
+      "source_sha256": "4083e396972b35b224de0b774d7fcc2261b98167f5a86db1617d6b57419d4563",
+      "split": "tuning",
+      "contact_sheet_index": 7,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-0d7726d7d5cd9640",
+      "source_sha256": "de3207f571542a09d45f461ae734148a3c3bf7b5ae46dd07c573671073ddacae",
+      "split": "tuning",
+      "contact_sheet_index": 8,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-0ff94afaa43a8fb6",
+      "source_sha256": "a3d1222ca55bc79a29ef9583c1dc7f138136f339706c07bc215f74b0cf898029",
+      "split": "tuning",
+      "contact_sheet_index": 9,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-13294241736a49d7",
+      "source_sha256": "6ac64da2f60f4e906fd33beaf00e61886e2148dc36eff8c35dc96dc24984656b",
+      "split": "tuning",
+      "contact_sheet_index": 10,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-15c473ae47357d22",
+      "source_sha256": "bca4e75344f3aa547178afd70409b443596fc6c42d90a6c65707761fa32ec677",
+      "split": "tuning",
+      "contact_sheet_index": 11,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-16a61577260c3147",
+      "source_sha256": "62fc4d612ecd87fd8b092eb3f992c82196938709e278b50f52d19c75eb4d97e9",
+      "split": "tuning",
+      "contact_sheet_index": 12,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-16c34ed2d912946a",
+      "source_sha256": "79cfe32902efdab57aa21a2924f8d11b452aeecaec20f3fd56e59c58474cf7e1",
+      "split": "tuning",
+      "contact_sheet_index": 13,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-19a1e09742a09af8",
+      "source_sha256": "92b9ce1232f34bd29f2e1bd24a8e54437141d2e595e70db833bed68022079524",
+      "split": "tuning",
+      "contact_sheet_index": 14,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-1aa6fde219456389",
+      "source_sha256": "7795ea16b36a70a2fff55396cbc8490b6ea2c3faff316955afdb512983cc6d78",
+      "split": "tuning",
+      "contact_sheet_index": 15,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient",
+        "visible_existing_mark"
+      ],
+      "notes": "Visible corner photographer mark."
+    },
+    {
+      "id": "oi-29b21d3251065543",
+      "source_sha256": "3be29dbf5f12282ade39712ac0b728ca828cb5d442e0729c61434d499cb11f97",
+      "split": "tuning",
+      "contact_sheet_index": 16,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-33e8a29203242e94",
+      "source_sha256": "ccbe3569bf3e7acc0d6bf5eb5d0a836f8605a9737bd72efee37db5c139827b1b",
+      "split": "tuning",
+      "contact_sheet_index": 17,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-3510a98a59445ada",
+      "source_sha256": "62d2cccb83ead3f6df3a898e7d4c546e601aa70198b7f0b563348c7c60b5eb55",
+      "split": "tuning",
+      "contact_sheet_index": 18,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces",
+        "visible_text",
+        "motion_blur_candidate"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-3d40e62437476295",
+      "source_sha256": "1ce14833718f477b9d6f7f4d7e7968b09e95798eef1495de55adc85ab69b8b45",
+      "split": "tuning",
+      "contact_sheet_index": 19,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-3f750d79be01cb88",
+      "source_sha256": "e888b22681b62e53ba3200b66daf112b3eb13986a8ff9920a325f6883d230612",
+      "split": "tuning",
+      "contact_sheet_index": 20,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-410b0ae930ca9405",
+      "source_sha256": "5f93f87d5a60db44cc5afc8dbc27ea3c924a6e5746877f1ff5ac41354b5446e7",
+      "split": "tuning",
+      "contact_sheet_index": 21,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-420c7a9a9c04d8ea",
+      "source_sha256": "292528dade701476a1e145ee3362d89e854e11124b48fc4a622173741a617d1a",
+      "split": "tuning",
+      "contact_sheet_index": 22,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-472a1a286fa6e9d0",
+      "source_sha256": "2e3f17a14e0f9077d25b342c94543ad088643efca8d40187095cc0de4eb72467",
+      "split": "tuning",
+      "contact_sheet_index": 23,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-48204f1b3007a6dc",
+      "source_sha256": "b0cbbef90a27c65e8495cdec6f8b94778a1b8b1da6f19a459e911797079fce20",
+      "split": "tuning",
+      "contact_sheet_index": 24,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-4f70f01c205b5b9e",
+      "source_sha256": "619872b727f004be588ca4f59004aa6d1c61e1deb21bc0a1d8b9f3d2455903d0",
+      "split": "tuning",
+      "contact_sheet_index": 25,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-576b89505b220594",
+      "source_sha256": "ea3d44f400a4b1aaac137460310eac5092fa5dd0887d5b53bcd9a950938a8c72",
+      "split": "tuning",
+      "contact_sheet_index": 26,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-5c7294bcda1ae70a",
+      "source_sha256": "ff4a135ca0a0575138cbd42e215b449312124f8fdbf75a01f963754d59f007e5",
+      "split": "tuning",
+      "contact_sheet_index": 27,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-5deb90a9218564d0",
+      "source_sha256": "093edbe75a6f047b65d146830767dc1b9c7ca4ac3d471fee5f0344fcb92ff914",
+      "split": "tuning",
+      "contact_sheet_index": 28,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text",
+        "screen_in_scene"
+      ],
+      "notes": "Photograph of a phone/display; not an actual screenshot."
+    },
+    {
+      "id": "oi-5e539e874612584b",
+      "source_sha256": "46a0d828abcedd12f2c340ada25aa6f9894ca4beede9150b0f1b4b4c0c0ba901",
+      "split": "tuning",
+      "contact_sheet_index": 29,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-5feddeea887bcc6e",
+      "source_sha256": "1db22040c08e415c7d79dd3a3e127908ac626d702281d5f17c55d4307229f4b8",
+      "split": "tuning",
+      "contact_sheet_index": 30,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-622f55cf251a20ce",
+      "source_sha256": "115e9fb66ad21e87d1fbf4221e0e53eec89539b8730ebf33b7f0a1d780fb5036",
+      "split": "tuning",
+      "contact_sheet_index": 31,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-64bb0339ae017549",
+      "source_sha256": "0172ca0d7263a47faef35ab37fdab2893b3c070d07cb73f1a1e6a94933753b13",
+      "split": "tuning",
+      "contact_sheet_index": 32,
+      "inspection": "source_resolution_and_contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient",
+        "low_light_scene"
+      ],
+      "notes": "Full-source inspection shows illuminated falling particles against a dark sky with foliage at the edge; photographic night scene."
+    },
+    {
+      "id": "oi-6617d02927b0b374",
+      "source_sha256": "6b75fe9fd5ee2026cf3f9ad6847ca58b7386419d16d5ede41dc81104f7463503",
+      "split": "tuning",
+      "contact_sheet_index": 33,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-6bf820edaaec0a84",
+      "source_sha256": "6a8ba113509d146604b198cd4498b909c09ee887061cca309b7b9d1bf21ef32e",
+      "split": "tuning",
+      "contact_sheet_index": 34,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-6c63b8e677a3abcf",
+      "source_sha256": "4da1ec8355cce4efc624cec66c5557579758a1005243225f763518e02588bfd7",
+      "split": "tuning",
+      "contact_sheet_index": 35,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-6f393f9ebeebe66a",
+      "source_sha256": "251a7a584e8beca42b2fc0104b0cfbd676c2b3a78fb717f4ed5fdfbe63035f95",
+      "split": "tuning",
+      "contact_sheet_index": 36,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-72b13048f15f513c",
+      "source_sha256": "75ed47463c6284c5df74583e303c0dc7310e20538c2a2326ec2c9f22236aee38",
+      "split": "tuning",
+      "contact_sheet_index": 37,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-733baad820575a2a",
+      "source_sha256": "a3af70be53565fabe15967f96c85061402731304342ea2426ba6147ae1ce9a96",
+      "split": "tuning",
+      "contact_sheet_index": 38,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-778a8209965e301e",
+      "source_sha256": "8fe190f217d62b462354565ecb11dbaeb8dc7aa0a819b2062a205fd6065454d1",
+      "split": "tuning",
+      "contact_sheet_index": 39,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-7b4e5922dffb4ddc",
+      "source_sha256": "92f63710e2d99f85f5d167849fead1dd10ebc8749762aa5bd1ae73e3cdd6648a",
+      "split": "tuning",
+      "contact_sheet_index": 40,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-7ea7dc56569f171f",
+      "source_sha256": "540c1cacacd6d8663016237e6a14f550d3e3674d0515de9b2130dd52db86fbce",
+      "split": "tuning",
+      "contact_sheet_index": 41,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-8171ba4eb9308cd5",
+      "source_sha256": "0ef6552b727269567f986ae6c8c0988e50662cab6cfc35e3b1274b7546ee65bb",
+      "split": "tuning",
+      "contact_sheet_index": 42,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-8214655b0d13d8ed",
+      "source_sha256": "5431bb26341cd3456bda866b59203ee19556e53ccb8e999d2ed70fad65bc3d9d",
+      "split": "tuning",
+      "contact_sheet_index": 43,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "processed_photo_stress",
+      "observed_tags": [
+        "border_or_inset"
+      ],
+      "notes": "Inset photo with broad white border; processed presentation."
+    },
+    {
+      "id": "oi-8255bcf627e2382e",
+      "source_sha256": "0b2e48c2992ea4c1606ca40f649f6be48906d912e14b1e36e48f18cdbfcc0fbe",
+      "split": "tuning",
+      "contact_sheet_index": 44,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-83dfc1a82c9f85e9",
+      "source_sha256": "4491bfb7f44c0f574521eeabb722afb4dba94819a5e43234029c824b1e3609b2",
+      "split": "tuning",
+      "contact_sheet_index": 45,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-85aaef881bbd03ae",
+      "source_sha256": "12425a9f9e12a3b478e8d340ad7b11d33fb147e06ed032ae5ba6364fc36f2925",
+      "split": "tuning",
+      "contact_sheet_index": 46,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-88a2ef79752539c2",
+      "source_sha256": "37cb489208a93af4797f1a6cfaaccb30b868eec8593b65bfd2f4fb9341025f79",
+      "split": "tuning",
+      "contact_sheet_index": 47,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-89c6c3da906d6dad",
+      "source_sha256": "0590984125d44d888ad5ea697b0169cac5ec1ad83d77622e0e23e6195095ed38",
+      "split": "tuning",
+      "contact_sheet_index": 48,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces",
+        "low_light_scene",
+        "motion_blur_candidate"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-8bc5348e5d8d6448",
+      "source_sha256": "8de7501ab77cb8412609a6c3a6e274e905f15a72435984f14e905577042eaa8c",
+      "split": "tuning",
+      "contact_sheet_index": 49,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-8f82fbb148cbb7b4",
+      "source_sha256": "16674477da058dd3044d9ebe81386b0f1694768717f2bb3648759fb539ec3f18",
+      "split": "tuning",
+      "contact_sheet_index": 50,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-935ddd7147973bbe",
+      "source_sha256": "2560a78b86df814431415ea4751e5f8c3697a846f49d708ab625ff2894f55a0f",
+      "split": "tuning",
+      "contact_sheet_index": 51,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces",
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-9691d8d5fd2e9f8d",
+      "source_sha256": "ec6ed0d74b55671f4dccd3a9c50a31529f7b2375730111f6e8a4609e91acb591",
+      "split": "tuning",
+      "contact_sheet_index": 52,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text",
+        "visible_existing_mark"
+      ],
+      "notes": "Visible logo near bottom center."
+    },
+    {
+      "id": "oi-99c8f4e0121ba8bd",
+      "source_sha256": "bc7c07c2c2ed87a96979f13973ed0dcbe9ac3e90e3090a757d5ea7b1c89f271f",
+      "split": "tuning",
+      "contact_sheet_index": 53,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-9aa710b019307755",
+      "source_sha256": "525cf38ff2113ba238ff0af53853372a6fd843101f14c1cf65b323d0b56c9a98",
+      "split": "tuning",
+      "contact_sheet_index": 54,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "artwork_stress",
+      "observed_tags": [
+        "artwork_in_scene"
+      ],
+      "notes": "Photograph of mosaic artwork; track artwork content separately."
+    },
+    {
+      "id": "oi-9cb13283b31bd94d",
+      "source_sha256": "c910b0d5085f22c22ce21e8b820985896aee18bad00f8d5987b609cbefab701a",
+      "split": "tuning",
+      "contact_sheet_index": 55,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-9d69848590304a04",
+      "source_sha256": "c7c33fe4237b2da8b03713a4a6d1b0b3724049f251cb388a0deba110b080340c",
+      "split": "tuning",
+      "contact_sheet_index": 56,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-9d9dba12241563e1",
+      "source_sha256": "1e53a76d8a9dc5181ab7182bb2f3ac8ee4adb0fa115fa3c811293f725ec2cf57",
+      "split": "tuning",
+      "contact_sheet_index": 57,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-9dcd4361e0a5588b",
+      "source_sha256": "2228051a843f35ce8d98145afebd3b9ad822bbeef1ddd44c2a967ffe5811132a",
+      "split": "tuning",
+      "contact_sheet_index": 58,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-9e4f1ea358eb0310",
+      "source_sha256": "518de738c98152e81406136165d9c28ebdacdb6e4090b573ee5e5bb074596431",
+      "split": "tuning",
+      "contact_sheet_index": 59,
+      "inspection": "source_resolution_and_contact_sheet",
+      "recommended_cohort": "processed_photo_stress",
+      "observed_tags": [
+        "smooth_background_or_gradient",
+        "product_cutout_appearance"
+      ],
+      "notes": "Full-source inspection shows storage boxes with towels on a white background; photographic product cutout appearance, editing history unknown."
+    },
+    {
+      "id": "oi-a04ec0b930e9da66",
+      "source_sha256": "4acfd392aa7c82147bc60fcc32b9f31eaab740c989cdb836eb6eb2f9f8ff0b2f",
+      "split": "tuning",
+      "contact_sheet_index": 60,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "composite_stress",
+      "observed_tags": [
+        "composite_or_graphic"
+      ],
+      "notes": "Repeated photographic montage in a two-by-four arrangement."
+    },
+    {
+      "id": "oi-a4e971020f2a9d54",
+      "source_sha256": "4ef7fbedf1a16d53799d5484695a43d619d79be953bb874e9d66f52213f528d0",
+      "split": "tuning",
+      "contact_sheet_index": 61,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-a8f4a6720067027e",
+      "source_sha256": "79568bbbce90f6c7317a946f05e8df9b2f1c9344cb3cb486326f408be21c1e74",
+      "split": "tuning",
+      "contact_sheet_index": 62,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-a9505d9e52a83643",
+      "source_sha256": "3ecdf2a9ec805725a2bf3ec394621be07b961a645fad77a2edbec9d380e6beb7",
+      "split": "tuning",
+      "contact_sheet_index": 63,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-aa86e62f68da0c7b",
+      "source_sha256": "1587e322f8c931a6d48905c2e80d86540902c0615f3ea6c1c53ec7600d53608a",
+      "split": "tuning",
+      "contact_sheet_index": 64,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "document_stress",
+      "observed_tags": [
+        "visible_text",
+        "composite_or_graphic"
+      ],
+      "notes": "Magazine-cover composition with photos and text."
+    },
+    {
+      "id": "oi-ac738b1c9ed05007",
+      "source_sha256": "16ea9177678763afc094dcfd6f6c84e2c023874ca80d1fa428b3226f621da2cb",
+      "split": "tuning",
+      "contact_sheet_index": 65,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-ad164960ff6f7ecb",
+      "source_sha256": "0fe265a27f19949b4580c9aa9ea9ecbf813f1923833e2abd65d2223418cf6ed8",
+      "split": "tuning",
+      "contact_sheet_index": 66,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-af49b7989b603e6e",
+      "source_sha256": "d13e3d29f675be97fbde86c23788f305ff91ea6e96880d4e58d4b6cacbed7ee7",
+      "split": "tuning",
+      "contact_sheet_index": 67,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text",
+        "visible_existing_mark"
+      ],
+      "notes": "Visible corner signature/photographer mark."
+    },
+    {
+      "id": "oi-af7bf1c02c6e1943",
+      "source_sha256": "16132d458be8d15e2702509c61eafc193c629a5857cda8ad055e1544f914ce31",
+      "split": "tuning",
+      "contact_sheet_index": 68,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-afe85eabf4e314c7",
+      "source_sha256": "78b83efa8ee47d90b8b31e0d9f362191a3d1dac742b16b0f899dfb1ab61af95d",
+      "split": "tuning",
+      "contact_sheet_index": 69,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-b186a4c56fcb10b5",
+      "source_sha256": "e719c5d192f470e2da872d541401abf5635f04e5899d8e7707450ec0d033911e",
+      "split": "tuning",
+      "contact_sheet_index": 70,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces",
+        "visible_text",
+        "visible_existing_mark"
+      ],
+      "notes": "Visible website mark along the bottom."
+    },
+    {
+      "id": "oi-b1ccc94a4446e0a7",
+      "source_sha256": "0f8854f5452da970e547853de141e88526a8ff502ed48c95ab4ee60deebd3401",
+      "split": "tuning",
+      "contact_sheet_index": 71,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-b26ed3fdc5e763a1",
+      "source_sha256": "2cd130526f25d17692ea59daea5f9351aab9129f6293dd28340731ee3c931386",
+      "split": "tuning",
+      "contact_sheet_index": 72,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-b85755d04ba47fe7",
+      "source_sha256": "54a332a5c50e4bb19b847d0a35e56528b3baf4b4cf5659375934608780b756ac",
+      "split": "tuning",
+      "contact_sheet_index": 73,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-b985d27a4d314c39",
+      "source_sha256": "2085606ad0c9059c2599ddb4b06e52f8a76561110aedf304deb8f535f7385355",
+      "split": "tuning",
+      "contact_sheet_index": 74,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-bc18be8d3bdf75cb",
+      "source_sha256": "4b83c45248d390b459f60f9bf86418879b6245db9761805a593d2c0e6a7c1215",
+      "split": "tuning",
+      "contact_sheet_index": 75,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-bc37ccba2857d1e7",
+      "source_sha256": "40708beff259e29821d2c5d1fa50e51c59c3ffb1df93d825b14b43ac2a7c916b",
+      "split": "tuning",
+      "contact_sheet_index": 76,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-be1563922e2db242",
+      "source_sha256": "2093c38b1bf9788b66a97f2db5610ef9ae3c8b69d7192d9196e3ef8a137cb650",
+      "split": "tuning",
+      "contact_sheet_index": 77,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-c2888bdb4749757e",
+      "source_sha256": "1509bff494f83f10b70bfee1e30214bb45f318d599dcb65261ff6859e4a0094c",
+      "split": "tuning",
+      "contact_sheet_index": 78,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-c76814023ecdc6b2",
+      "source_sha256": "0e3c96191ffb45d8b1663a2edf2b6e881eae2b37c09ba02c7917e59bd4e94b27",
+      "split": "tuning",
+      "contact_sheet_index": 79,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "rendered_stress",
+      "observed_tags": [
+        "composite_or_graphic"
+      ],
+      "notes": "Abstract rendered graphic rather than a natural scene photograph."
+    },
+    {
+      "id": "oi-cb255057df173f76",
+      "source_sha256": "6249265f0c5a1ef17319d5c44df40d1a88e4f19bb0da12bcd97bb0932326da9b",
+      "split": "tuning",
+      "contact_sheet_index": 80,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-ccce1c730c1696db",
+      "source_sha256": "4b714b8f59b9e91f429fab2550f9237bea81881a5b3e55d80ae4b2cb68c328e6",
+      "split": "tuning",
+      "contact_sheet_index": 81,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient",
+        "motion_blur_candidate"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-cd1230dbf6246628",
+      "source_sha256": "06f08f41f9cc641484bc4a6b95373e50b017fb87763c283bcd40473707186f25",
+      "split": "tuning",
+      "contact_sheet_index": 82,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-ce00d0049107426d",
+      "source_sha256": "fbe2010389f1126c371fe2911a7028bb6499dec8e1ee3fb711f108059c767ba6",
+      "split": "tuning",
+      "contact_sheet_index": 83,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text",
+        "visible_existing_mark"
+      ],
+      "notes": "Visible date stamp."
+    },
+    {
+      "id": "oi-d0f583ebee7c897d",
+      "source_sha256": "eff6115dcab69e9f02099848ae675ac6699181c1a0e76c6120d7031b03e0c57a",
+      "split": "tuning",
+      "contact_sheet_index": 84,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-d934b8e1d290b27a",
+      "source_sha256": "78daebb50c1a2db566cb57bcc936570af4098b8833be21ff37991e0aa322ea11",
+      "split": "tuning",
+      "contact_sheet_index": 85,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-da25ed0c6a979cbf",
+      "source_sha256": "129f30c57e4e2429187c896e873cf4e966f3d617d9103e4399a59790d576c42a",
+      "split": "tuning",
+      "contact_sheet_index": 86,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "low_light_scene"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-dae540d581050d0e",
+      "source_sha256": "a24d1634604b287108b3decf3a987faeec03a8f94da7ca4dc77746c375078f8f",
+      "split": "tuning",
+      "contact_sheet_index": 87,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces",
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-dcdbabe52cb921f4",
+      "source_sha256": "6223dafc10399ff5793ce3c7b70a65a75cf5124a287a264d20c6c2ceca426615",
+      "split": "tuning",
+      "contact_sheet_index": 88,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text",
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-e1d466120477e143",
+      "source_sha256": "d322e08baaf0a74efce685ae2db635dbcfd31871e38223f7aeaa1d07d295ec8d",
+      "split": "tuning",
+      "contact_sheet_index": 89,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-e6c973d732715a4c",
+      "source_sha256": "be2e9d91949f43cce289808288b53b042055b761192aa37de2fd654dd1556153",
+      "split": "tuning",
+      "contact_sheet_index": 90,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-e91124b2bc457d30",
+      "source_sha256": "4d9c9c187cc8ca0399316dd527795164237a119e1821a353c599081ae587c985",
+      "split": "tuning",
+      "contact_sheet_index": 91,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "smooth_background_or_gradient"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-e9114065de005073",
+      "source_sha256": "e33f9b0a883212c055429ad5bbc49d8f19b17e2cfeff51f2bf51281208211777",
+      "split": "tuning",
+      "contact_sheet_index": 92,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces",
+        "visible_text"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-e92c5734cb4cbe32",
+      "source_sha256": "c58f43477b697e9507614adb67aa29c9eb768d13e34e055c4b7a48a56493d331",
+      "split": "tuning",
+      "contact_sheet_index": 93,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-eae2ab880edff8ba",
+      "source_sha256": "2a0bade839b403ab6bf4183ab37689006cad0167fb3221eaf4a45c9c475b52e0",
+      "split": "tuning",
+      "contact_sheet_index": 94,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "processed_photo_stress",
+      "observed_tags": [
+        "border_or_inset"
+      ],
+      "notes": "Photograph with heavy decorative border."
+    },
+    {
+      "id": "oi-eb1f5d8c4b5a6983",
+      "source_sha256": "f61246d6d846fd2749cc01b2df36003dabc7058e32220e1e4e86a23abdd1661c",
+      "split": "tuning",
+      "contact_sheet_index": 95,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-eb780efc66baeecc",
+      "source_sha256": "7e716e1c34645796b9a0a6e35a72d844a4c677f0693d5edb0723c2152f31de48",
+      "split": "tuning",
+      "contact_sheet_index": 96,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-ee5734e230dfa8be",
+      "source_sha256": "06c30f7bbccf886314ea481833b0ba258fb4ff449be0d26c03d2b85120305347",
+      "split": "tuning",
+      "contact_sheet_index": 97,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-f0960541ceea9059",
+      "source_sha256": "f6c9d4e0971cb5bf0126831fa698dc3750773e0e7fffd35c81a4fc8792e69f50",
+      "split": "tuning",
+      "contact_sheet_index": 98,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    },
+    {
+      "id": "oi-f4e9137d4ceb52f0",
+      "source_sha256": "f7aa30215dbe2149c277f0b6581fd91abf5aaaa4883a77028a262a5ff5edcad3",
+      "split": "tuning",
+      "contact_sheet_index": 99,
+      "inspection": "source_resolution_and_contact_sheet",
+      "recommended_cohort": "artwork_stress",
+      "observed_tags": [
+        "artwork_in_scene"
+      ],
+      "notes": "Full-source inspection shows a butterfly drawing filling the frame; artwork content."
+    },
+    {
+      "id": "oi-f9bf8dff66249d63",
+      "source_sha256": "774eeebac062ded50297ad5b497c7b76d375a8f1ce6cdabb79c6970cd6afc923",
+      "split": "tuning",
+      "contact_sheet_index": 100,
+      "inspection": "contact_sheet",
+      "recommended_cohort": "primary_photo_candidate",
+      "observed_tags": [
+        "faces"
+      ],
+      "notes": "Photo-like scene at contact-sheet resolution; no specific exception recorded. This is not a rights or authenticity approval."
+    }
+  ]
+}
