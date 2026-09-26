@@ -1,6 +1,6 @@
 # Step 6: Conventional watermark experiments
 
-Status: **In progress**. This first desktop tuning experiment compares two conventional block-DCT baselines. It does not qualify an Android device, certify media, or select the production watermark.
+Status: **Blocked on physical-device validation** (September 26, 2026). The [final desktop report and device blocker](06-conventional-watermark-final-report.md) conclude the local study and link the installable Android research app. The earlier experiments below remain historical evidence; none qualifies a phone or selects a production watermark.
 
 ## Candidates and payload
 

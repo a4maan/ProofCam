@@ -1,0 +1,60 @@
+{
+  "status": "apk_built_and_statically_checked_not_device_tested",
+  "apk_path": "android-benchmark/app/build/outputs/apk/debug/app-debug.apk",
+  "apk_sha256": "f5b6597c52ffbaa8e65341b32bf80d89fee0a09ccc00da6044e505b313946644",
+  "apk_size_bytes": 68868,
+  "signature_verification": "Verifies\nVerified using v1 scheme (JAR signing): false\nVerified using v2 scheme (APK Signature Scheme v2): true\nVerified using v3 scheme (APK Signature Scheme v3): false\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\nVerified using v4 scheme (APK Signature Scheme v4): false\nVerified for SourceStamp: false\nNumber of signers: 1",
+  "manifest_permissions": "package: org.proofcam.benchmark",
+  "package_badging": [
+    "package: name='org.proofcam.benchmark' versionCode='1' versionName='0.1-research' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'",
+    "minSdkVersion:'34'",
+    "targetSdkVersion:'35'",
+    "application-label:'ProofCam Research'",
+    "launchable-activity: name='org.proofcam.benchmark.MainActivity'  label='' icon=''"
+  ],
+  "source_sha256": {
+    "android-benchmark/tools/check_parity.py": "745763bfdde3a842f83af73731779eb39d306f8bbe7844f91f755a9b3143d35e",
+    "android-benchmark/tools/CoreParity.java": "9cbe7c8028a9830d795d141fc8146f2e73cbb4491d72d47abd42c4eef63986dd",
+    "android-benchmark/app/src/main/AndroidManifest.xml": "8447e97cdb735d8c23901ed72e6fdf2fcdaa1de0d16eedfeda040e5105885144",
+    "android-benchmark/app/src/main/java/org/proofcam/benchmark/AndroidCandidate.java": "13ddda0c43574f9b365ceeb0afabfdea05825b0751c9c97107390d6181876d0b",
+    "android-benchmark/app/src/main/java/org/proofcam/benchmark/DctCore.java": "e9a8bee59363bb37e5287e8dc42b844e6fbac2a24b64bfeece7aa9048fab47a0",
+    "android-benchmark/app/src/main/java/org/proofcam/benchmark/MainActivity.java": "11ab723e0b8e68cc02673a2b53b6ae8246f0b2e54ee5ffe91cc887f1f07b9dba",
+    "android-benchmark/app/src/main/res/xml/data_extraction_rules.xml": "f50148eab9e607a1d41b41ab1a6832353af0cb98c5fb4e2ca6364942cfea5969"
+  },
+  "gradle_version": "8.13",
+  "agp_version": "8.13.0",
+  "compile_sdk": 35,
+  "build_tools": "35.0.0",
+  "jdk": "OpenJDK 21.0.12.1",
+  "lint_errors": 0,
+  "lint_warnings": [
+    {
+      "id": "OldTargetApi",
+      "severity": "Warning",
+      "message": "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+    },
+    {
+      "id": "AndroidGradlePluginVersion",
+      "severity": "Warning",
+      "message": "A newer version of Gradle than 8.13 is available: 8.14.5"
+    },
+    {
+      "id": "GradleDependency",
+      "severity": "Warning",
+      "message": "A newer version of `compileSdkVersion` than 35 is available: 36"
+    },
+    {
+      "id": "SetTextI18n",
+      "severity": "Warning",
+      "message": "String literal in `setText` can not be translated. Use Android resources instead."
+    }
+  ],
+  "physical_device_runs": 0,
+  "user_device_availability": "User confirmed no Android phone available, 2026-09-26",
+  "host_parity_report": "benchmark/reports/step06-native-parity.json",
+  "limitations": [
+    "No UI or instrumentation execution on Android yet",
+    "No physical screenshots, timings, or peak-memory measurements",
+    "Debug APK; no production issuance, signing identity, or release qualification"
+  ]
+}

@@ -5,3 +5,4 @@
 *.jpg binary
 *.jpeg binary
 *.png binary
+android-benchmark/gradlew.bat text eol=crlf

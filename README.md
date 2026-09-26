@@ -16,7 +16,7 @@ Step 4 is documented in the [capture and verification screen design](docs/04-cap
 
 Step 5 now has a working [benchmark harness](benchmark/README.md), **11,200 distinct source images**, 53 native-2048+ resolution variants, and a 300,000-case negative stress recipe plan. The [readiness record](docs/05-benchmark-data-and-harness.md) remains **in progress**: local corpus approval, actual screenshots, and final evaluation eligibility remain pending. Stress variants are not independent new photographs.
 
-Next available work: step 6, benchmark conventional watermarks on the tuning split while completing corpus readiness.
+Step 6: the [desktop study is complete](docs/06-conventional-watermark-final-report.md), and an [Android research APK project](android-benchmark/README.md) is ready for device testing. Full step completion is **blocked: no Android phone is available**. Current candidates fail the required crop/rotation envelope and are not selected for production.
 
 ## Planning references
 
@@ -24,7 +24,3 @@ Next available work: step 6, benchmark conventional watermarks on the tuning spl
 - [Development roadmap](ProofCam_Android_Development_Roadmap.xlsx)
 
 The original specification describes a broader release than the initial Android photo pilot. The product brief records the staged scope and the sharing-policy adjustment agreed during planning.
-
-Step 6 is **in progress**: [conventional watermark experiments](docs/06-conventional-watermark-benchmarks.md) now implement two full-ID DCT baselines and a tuning-only comparison. Physical-device measurements and actual screenshot recovery remain pending.
-
-Step 6 continuation adds [bounded scale and border recovery](benchmark/REGISTERED.md), tested on the same tuning photos and full IDs. Results remain desktop research, with crop/rotation and physical-device qualification outstanding.

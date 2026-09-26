@@ -1,0 +1,6 @@
+{
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "concurrent_local_work": true,
+  "discarded_run": "conventional-final-v1 aborted on unsupported ICC profile; not scored"
+}

@@ -1,0 +1,208 @@
+{
+  "actual_screenshots": 0,
+  "android_measurements": 0,
+  "candidate": "qim12_registered",
+  "limitations": [
+    "Tuning only; no held-out release evaluation",
+    "Rights and final negative eligibility remain pending",
+    "Unsupported normalization stays in recovery denominators; no quality score for missing pairs",
+    "Desktop timings diagnostic: Gradle/host checks ran concurrently; not controlled Android timing",
+    "Native-resolution variants are reported separately and must not be pooled as new independent sources"
+  ],
+  "negative_candidates_scheduled": 1000,
+  "negative_complete": 994,
+  "negative_detections": 0,
+  "normalization_failures": [
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-576b89505b220594",
+      "split": "tuning"
+    },
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-0276aef954d36f18",
+      "split": "negative"
+    },
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-039782bb88d38690",
+      "split": "negative"
+    },
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-046e68a0f54f9664",
+      "split": "negative"
+    },
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-0ce960b8d36cc629",
+      "split": "negative"
+    },
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-0ddfd840b9f43875",
+      "split": "negative"
+    },
+    {
+      "error": "PyCMSError: cannot build transform",
+      "source_id": "oi-16c0270ea2a6aefe",
+      "split": "negative"
+    }
+  ],
+  "numeric_quality_floor_on_prepared_pairs_only": true,
+  "positive_sources_scheduled": 92,
+  "production_selection": "no-go for current candidates under required crop/rotation envelope",
+  "quality_pairs": 91,
+  "quality_ssim_mean_prepared_pairs_only": 0.9902242028113496,
+  "quality_ssim_p5_prepared_pairs_only": 0.9829386033855876,
+  "recovery_by_transform": {
+    "brightness_m10": {
+      "correct": 90,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "brightness_p10": {
+      "correct": 90,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_25_br": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_25_center": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_25_tl": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_50_br": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_50_center": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_50_tl": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_75_br": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_75_center": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "crop_75_tl": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "gamma_08": {
+      "correct": 89,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "gamma_12": {
+      "correct": 88,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "jpeg_q50": {
+      "correct": 90,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "jpeg_q70": {
+      "correct": 90,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "jpeg_q90": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "metadata_strip": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "original": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "overlay_10": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "resize_1024": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "resize_2048": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "resize_256": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "resize_512": {
+      "correct": 83,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "rotate_90": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "rotate_m5": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "rotate_p5": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "synthetic_combined": {
+      "correct": 0,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "synthetic_screenshot_1024": {
+      "correct": 91,
+      "missing_or_error": 1,
+      "scheduled": 92
+    },
+    "synthetic_screenshot_512": {
+      "correct": 83,
+      "missing_or_error": 1,
+      "scheduled": 92
+    }
+  },
+  "scheduled_cases": 3668,
+  "status": "desktop_characterization_complete_physical_validation_blocked",
+  "user_phone_availability": "none; confirmed 2026-09-26"
+}

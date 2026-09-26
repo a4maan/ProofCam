@@ -1,0 +1,52 @@
+{
+  "candidate": "android-qim12-bilinear-v1",
+  "fixtures": [
+    {
+      "different_channels": 103992,
+      "fixture": 0,
+      "height": 384,
+      "java_roundtrip": true,
+      "java_to_python_id_match": true,
+      "max_channel_difference": 6,
+      "python_to_java_id_match": true,
+      "quantization_midpoint_blocks": 619,
+      "width": 512
+    },
+    {
+      "different_channels": 16,
+      "fixture": 1,
+      "height": 384,
+      "java_roundtrip": true,
+      "java_to_python_id_match": true,
+      "max_channel_difference": 1,
+      "python_to_java_id_match": true,
+      "quantization_midpoint_blocks": 0,
+      "width": 512
+    },
+    {
+      "different_channels": 189,
+      "fixture": 2,
+      "height": 768,
+      "java_roundtrip": true,
+      "java_to_python_id_match": true,
+      "max_channel_difference": 6,
+      "python_to_java_id_match": true,
+      "quantization_midpoint_blocks": 1,
+      "width": 1024
+    }
+  ],
+  "guards": [
+    "flat_negative",
+    "invalid_id",
+    "insufficient_capacity"
+  ],
+  "java_core_sha256": "e9a8bee59363bb37e5287e8dc42b844e6fbac2a24b64bfeece7aa9048fab47a0",
+  "limitations": [
+    "Raw RGB core comparison only",
+    "Android JPEG encoding, decoding, resampling, UI, and memory are not tested by this host test",
+    "Float32/double midpoint ties may choose opposite valid QIM lattice points; observed differences above one level must be confined to verified midpoint blocks; output images are not byte-equivalent",
+    "One source photo plus two procedural test fixtures; not a robustness or quality gate"
+  ],
+  "python_candidate_sha256": "1d461f187734d496ea767db92ec2a2aeb62179a39d69ae0a0cd5fae47b5cd113",
+  "status": "host_jvm_parity_passed_not_android_qualification"
+}
