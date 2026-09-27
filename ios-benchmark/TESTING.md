@@ -40,3 +40,40 @@ Still required on macOS/iPhone:
 - Actual screenshot recovery in chosen viewers/zoom settings. Capture failures as results, not exclusions.
 
 There are no automated UI tests yet. The host checks cannot establish that the Apple APIs, permissions, file providers, or physical device behave correctly. No paid cloud build, remote Mac, or external device service was used.
+
+## Additional host simulations and sanitizer pass
+
+The additional suite includes 2,000 deterministic malformed/valid crop rectangles, four extreme aspect ratios, and **145 synthetic cases** decoded by the actual Swift bounded-search candidate. Results are retained in [the simulation report](../benchmark/reports/step06-ios-simulation.json), including misses and every search attempt.
+
+| Synthetic condition | Full-ID matches |
+| --- | --- |
+| native | 3/3 |
+| pillow_jpeg_95 | 3/3 |
+| pillow_jpeg_85 | 3/3 |
+| pillow_jpeg_70 | 3/3 |
+| resize_512 | 2/3 |
+| uniform_screenshot_512 | 2/3 |
+| resize_768 | 1/3 |
+| uniform_screenshot_768 | 1/3 |
+| resize_1024 | 1/3 |
+| uniform_screenshot_1024 | 1/3 |
+| crop_10percent | 0/3 |
+| rotate_90 | 0/3 |
+| mirror | 0/3 |
+| nonuniform_chrome | 0/3 |
+| manual_rectangle | 3/3 |
+
+The 100 unmarked procedural noise images produced zero detections. JPEG tests use Pillow, not Apple's codec. There are only three marked sources (two procedural images, one photo); these are small functional probes, not estimates of production reliability. The manual-rectangle case supplies the exact known media bounds; it does not show automatic localization or robustness to imprecise selection.
+
+**Findings:** compression worked on these examples, but rescaling was inconsistent. Cropping, rotation, mirroring, and nonuniform viewer chrome defeated automatic recovery in all tested examples. Exact manual extraction recovered all three examples with viewer chrome. A passing test run means outcomes were recorded without crashes or unexpected IDs; it does not mean every transformation recovered successfully.
+
+A Debug AddressSanitizer run passed 21 tests with no reported address-safety errors. One additional fixture-dependent simulation test was explicitly skipped in that sanitizer run; the 145-case matrix ran separately in Release. Leak detection was disabled (`ASAN_OPTIONS=detect_leaks=0`), so this is not a leak test or an iOS memory qualification. Apple-only tests remain excluded on Linux.
+
+Reproduce after the raw cross-decoder fixtures have been generated:
+
+```sh
+python3 ios-benchmark/tools/simulate.py /path/to/swift
+ASAN_OPTIONS=detect_leaks=0 swift test --package-path ios-benchmark/Core --scratch-path /tmp/proofcam-swift-asan --sanitize=address -c debug
+```
+
+The simulator stores generated pixels under ignored `benchmark/runs/ios-simulation-v1/`; the manifest hashes each input. No phone, Apple image codec, Apple SDK, or GUI was simulated.

@@ -1,0 +1,4986 @@
+{
+  "kind": "synthetic_host_simulation_not_ios_evidence",
+  "groups": {
+    "native": {
+      "cases": 3,
+      "matching": 3,
+      "unexpected_ids": 0
+    },
+    "pillow_jpeg_95": {
+      "cases": 3,
+      "matching": 3,
+      "unexpected_ids": 0
+    },
+    "pillow_jpeg_85": {
+      "cases": 3,
+      "matching": 3,
+      "unexpected_ids": 0
+    },
+    "pillow_jpeg_70": {
+      "cases": 3,
+      "matching": 3,
+      "unexpected_ids": 0
+    },
+    "resize_512": {
+      "cases": 3,
+      "matching": 2,
+      "unexpected_ids": 0
+    },
+    "uniform_screenshot_512": {
+      "cases": 3,
+      "matching": 2,
+      "unexpected_ids": 0
+    },
+    "resize_768": {
+      "cases": 3,
+      "matching": 1,
+      "unexpected_ids": 0
+    },
+    "uniform_screenshot_768": {
+      "cases": 3,
+      "matching": 1,
+      "unexpected_ids": 0
+    },
+    "resize_1024": {
+      "cases": 3,
+      "matching": 1,
+      "unexpected_ids": 0
+    },
+    "uniform_screenshot_1024": {
+      "cases": 3,
+      "matching": 1,
+      "unexpected_ids": 0
+    },
+    "crop_10percent": {
+      "cases": 3,
+      "matching": 0,
+      "unexpected_ids": 0
+    },
+    "rotate_90": {
+      "cases": 3,
+      "matching": 0,
+      "unexpected_ids": 0
+    },
+    "mirror": {
+      "cases": 3,
+      "matching": 0,
+      "unexpected_ids": 0
+    },
+    "nonuniform_chrome": {
+      "cases": 3,
+      "matching": 0,
+      "unexpected_ids": 0
+    },
+    "manual_rectangle": {
+      "cases": 3,
+      "matching": 3,
+      "unexpected_ids": 0
+    },
+    "unmarked_noise": {
+      "cases": 100,
+      "matching": 100,
+      "unexpected_ids": 0
+    }
+  },
+  "case_count": 145,
+  "fixture_manifest_sha256": "b3c71cf77897221869e12b65190039fd372a34a8f292c7ca3f7ac37740f669c1",
+  "source_sha256": {
+    "ios-benchmark/tools/simulate.py": "4664f869d4b6a70e4bab7cc798fcdd08891c731065c5daeef4bc180d1a9f5df7",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/HostSimulationTests.swift": "6c1dd0424e120ebabd539713ce7ad1c7d294bcafd8b2c94599fef767bb7f1cfe",
+    "ios-benchmark/Core/Sources/ProofCamCore/Watermark.swift": "5ecfebe886cf80df35f89903baddda51dbe3afe99988955474228fa821a9ad3a"
+  },
+  "limitations": [
+    "Three marked sources: two procedural images and one photo; transformations are not independent photos",
+    "100 procedural negatives are not a real-photo false-positive study",
+    "Pillow JPEG/resampling and synthetic chrome are not Apple codecs or real screenshots",
+    "Transform recovery failures are recorded, not hidden by the test pass status"
+  ],
+  "results": [
+    {
+      "attempts": [
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/native",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/pillow_jpeg_95",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/pillow_jpeg_85",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/pillow_jpeg_70",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/resize_512",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 528,
+          "rectangle": [
+            0,
+            0,
+            558,
+            528
+          ],
+          "status": "searched",
+          "width": 558
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 969,
+          "rectangle": [
+            0,
+            0,
+            558,
+            528
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "uniform_border_trim:native",
+          "height": 384,
+          "rectangle": [
+            17,
+            83,
+            529,
+            467
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            529,
+            467
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/uniform_screenshot_512",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 576,
+          "rectangle": [
+            0,
+            0,
+            768,
+            576
+          ],
+          "status": "searched",
+          "width": 768
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            768,
+            576
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/resize_768",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 720,
+          "rectangle": [
+            0,
+            0,
+            814,
+            720
+          ],
+          "status": "searched",
+          "width": 814
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 906,
+          "rectangle": [
+            0,
+            0,
+            814,
+            720
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 576,
+          "rectangle": [
+            17,
+            83,
+            785,
+            659
+          ],
+          "status": "searched",
+          "width": 768
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            785,
+            659
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/uniform_screenshot_768",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/resize_1024",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 912,
+          "rectangle": [
+            0,
+            0,
+            1070,
+            912
+          ],
+          "status": "searched",
+          "width": 1070
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 873,
+          "rectangle": [
+            0,
+            0,
+            1070,
+            912
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            1041,
+            851
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/uniform_screenshot_1024",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 308,
+          "rectangle": [
+            0,
+            0,
+            410,
+            308
+          ],
+          "status": "searched",
+          "width": 410
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 769,
+          "rectangle": [
+            0,
+            0,
+            410,
+            308
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/crop_10percent",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 512,
+          "rectangle": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "status": "searched",
+          "width": 384
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 1024,
+          "rectangle": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "status": "searched",
+          "width": 768
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/rotate_90",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/mirror",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 528,
+          "rectangle": [
+            0,
+            0,
+            560,
+            528
+          ],
+          "status": "searched",
+          "width": 560
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 965,
+          "rectangle": [
+            0,
+            0,
+            560,
+            528
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 452,
+          "rectangle": [
+            4,
+            4,
+            536,
+            456
+          ],
+          "status": "searched",
+          "width": 532
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 870,
+          "rectangle": [
+            4,
+            4,
+            536,
+            456
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": false,
+      "name": "fixture0/nonuniform_chrome",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "9c2cfa30cb9052920e5836869e82b150",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "9c2cfa30cb9052920e5836869e82b150",
+      "matching": true,
+      "name": "fixture0/manual_rectangle",
+      "recovered": [
+        "9c2cfa30cb9052920e5836869e82b150"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/native",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/pillow_jpeg_95",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/pillow_jpeg_85",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/pillow_jpeg_70",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/resize_512",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 528,
+          "rectangle": [
+            0,
+            0,
+            558,
+            528
+          ],
+          "status": "searched",
+          "width": 558
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 969,
+          "rectangle": [
+            0,
+            0,
+            558,
+            528
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "uniform_border_trim:native",
+          "height": 384,
+          "rectangle": [
+            17,
+            83,
+            529,
+            467
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            529,
+            467
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/uniform_screenshot_512",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 576,
+          "rectangle": [
+            0,
+            0,
+            768,
+            576
+          ],
+          "status": "searched",
+          "width": 768
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            768,
+            576
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/resize_768",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 720,
+          "rectangle": [
+            0,
+            0,
+            814,
+            720
+          ],
+          "status": "searched",
+          "width": 814
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 906,
+          "rectangle": [
+            0,
+            0,
+            814,
+            720
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 576,
+          "rectangle": [
+            17,
+            83,
+            785,
+            659
+          ],
+          "status": "searched",
+          "width": 768
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            785,
+            659
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/uniform_screenshot_768",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/resize_1024",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 912,
+          "rectangle": [
+            0,
+            0,
+            1070,
+            912
+          ],
+          "status": "searched",
+          "width": 1070
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 873,
+          "rectangle": [
+            0,
+            0,
+            1070,
+            912
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            1041,
+            851
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/uniform_screenshot_1024",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 308,
+          "rectangle": [
+            0,
+            0,
+            410,
+            308
+          ],
+          "status": "searched",
+          "width": 410
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 769,
+          "rectangle": [
+            0,
+            0,
+            410,
+            308
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/crop_10percent",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 512,
+          "rectangle": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "status": "searched",
+          "width": 384
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 1024,
+          "rectangle": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "status": "searched",
+          "width": 768
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/rotate_90",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/mirror",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 528,
+          "rectangle": [
+            0,
+            0,
+            560,
+            528
+          ],
+          "status": "searched",
+          "width": 560
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 965,
+          "rectangle": [
+            0,
+            0,
+            560,
+            528
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 452,
+          "rectangle": [
+            4,
+            4,
+            536,
+            456
+          ],
+          "status": "searched",
+          "width": 532
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 870,
+          "rectangle": [
+            4,
+            4,
+            536,
+            456
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": false,
+      "name": "fixture1/nonuniform_chrome",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "5ee2968d6916e3e87003ada2d7255c85",
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "5ee2968d6916e3e87003ada2d7255c85",
+      "matching": true,
+      "name": "fixture1/manual_rectangle",
+      "recovered": [
+        "5ee2968d6916e3e87003ada2d7255c85"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/native",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/pillow_jpeg_95",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/pillow_jpeg_85",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/pillow_jpeg_70",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 384,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            512,
+            384
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": false,
+      "name": "fixture2/resize_512",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 528,
+          "rectangle": [
+            0,
+            0,
+            558,
+            528
+          ],
+          "status": "searched",
+          "width": 558
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 969,
+          "rectangle": [
+            0,
+            0,
+            558,
+            528
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 384,
+          "rectangle": [
+            17,
+            83,
+            529,
+            467
+          ],
+          "status": "searched",
+          "width": 512
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            529,
+            467
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": false,
+      "name": "fixture2/uniform_screenshot_512",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 576,
+          "rectangle": [
+            0,
+            0,
+            768,
+            576
+          ],
+          "status": "searched",
+          "width": 768
+        },
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            768,
+            576
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/resize_768",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 720,
+          "rectangle": [
+            0,
+            0,
+            814,
+            720
+          ],
+          "status": "searched",
+          "width": 814
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 906,
+          "rectangle": [
+            0,
+            0,
+            814,
+            720
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 576,
+          "rectangle": [
+            17,
+            83,
+            785,
+            659
+          ],
+          "status": "searched",
+          "width": 768
+        },
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            785,
+            659
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/uniform_screenshot_768",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/resize_1024",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 912,
+          "rectangle": [
+            0,
+            0,
+            1070,
+            912
+          ],
+          "status": "searched",
+          "width": 1070
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 873,
+          "rectangle": [
+            0,
+            0,
+            1070,
+            912
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "uniform_border_trim:native",
+          "height": 768,
+          "rectangle": [
+            17,
+            83,
+            1041,
+            851
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/uniform_screenshot_1024",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 616,
+          "rectangle": [
+            0,
+            0,
+            820,
+            616
+          ],
+          "status": "searched",
+          "width": 820
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 769,
+          "rectangle": [
+            0,
+            0,
+            820,
+            616
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": false,
+      "name": "fixture2/crop_10percent",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 1024,
+          "rectangle": [
+            0,
+            0,
+            768,
+            1024
+          ],
+          "status": "searched",
+          "width": 768
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": false,
+      "name": "fixture2/rotate_90",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": false,
+      "name": "fixture2/mirror",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 912,
+          "rectangle": [
+            0,
+            0,
+            1072,
+            912
+          ],
+          "status": "searched",
+          "width": 1072
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 871,
+          "rectangle": [
+            0,
+            0,
+            1072,
+            912
+          ],
+          "status": "searched",
+          "width": 1024
+        },
+        {
+          "geometry": "uniform_border_trim:native",
+          "height": 836,
+          "rectangle": [
+            4,
+            4,
+            1048,
+            840
+          ],
+          "status": "searched",
+          "width": 1044
+        },
+        {
+          "geometry": "uniform_border_trim:edge1024",
+          "height": 820,
+          "rectangle": [
+            4,
+            4,
+            1048,
+            840
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": false,
+      "name": "fixture2/nonuniform_chrome",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "decodedID": "82f793d5f7c685dd179481e4e41b2b35",
+          "geometry": "whole:native",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "expected": "82f793d5f7c685dd179481e4e41b2b35",
+      "matching": true,
+      "name": "fixture2/manual_rectangle",
+      "recovered": [
+        "82f793d5f7c685dd179481e4e41b2b35"
+      ],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/0",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/1",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/2",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/3",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/4",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/5",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/6",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/7",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/8",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/9",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/10",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/11",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/12",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/13",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/14",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/15",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/16",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/17",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/18",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/19",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/20",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/21",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/22",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/23",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/24",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/25",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/26",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/27",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/28",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/29",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/30",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/31",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/32",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/33",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/34",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/35",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/36",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/37",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/38",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/39",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/40",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/41",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/42",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/43",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/44",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/45",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/46",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/47",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/48",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/49",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/50",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/51",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/52",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/53",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/54",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/55",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/56",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/57",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/58",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/59",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/60",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/61",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/62",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/63",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/64",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/65",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/66",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/67",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/68",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/69",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/70",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/71",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/72",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/73",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/74",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/75",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/76",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/77",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/78",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/79",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/80",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/81",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/82",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/83",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/84",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/85",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/86",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/87",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/88",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/89",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/90",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/91",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/92",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/93",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/94",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/95",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/96",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/97",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/98",
+      "recovered": [],
+      "unexpectedIDs": []
+    },
+    {
+      "attempts": [
+        {
+          "geometry": "whole:native",
+          "height": 192,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 256
+        },
+        {
+          "geometry": "whole:edge1024",
+          "height": 768,
+          "rectangle": [
+            0,
+            0,
+            256,
+            192
+          ],
+          "status": "searched",
+          "width": 1024
+        }
+      ],
+      "matching": true,
+      "name": "unmarked_noise/99",
+      "recovered": [],
+      "unexpectedIDs": []
+    }
+  ]
+}

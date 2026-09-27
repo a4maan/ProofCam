@@ -2,7 +2,7 @@
 
 An iOS 17+ SwiftUI port of the Android watermark experiment, intended for the available **iPhone 16 Pro**. This is research software, not the production capture/certificate app. It uses free local tools and no backend, analytics, accounts, or network requests.
 
-**Status:** source and Xcode project prepared. Nineteen portable Swift tests and three raw RGB cross-decoder fixtures passed on Linux with Swift 6.0.3. The app source passes Swift syntax parsing. See the [test audit](TESTING.md) for coverage and outstanding checks. **No Apple SDK typecheck, Xcode build, simulator run, signing, or physical iPhone test has been performed here.** Run the Mac validation below before collecting evidence. See [host parity results](../benchmark/reports/step06-ios-parity.json).
+**Status:** source and Xcode project prepared. Portable Swift tests, synthetic geometry simulations, and three raw RGB cross-decoder fixtures passed on Linux with Swift 6.0.3. The app source passes Swift syntax parsing. See the [test audit](TESTING.md) for coverage and outstanding checks. **No Apple SDK typecheck, Xcode build, simulator run, signing, or physical iPhone test has been performed here.** Run the Mac validation below before collecting evidence. See [host parity results](../benchmark/reports/step06-ios-parity.json).
 
 ## Open on your Mac
 
