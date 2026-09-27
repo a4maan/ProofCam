@@ -24,3 +24,5 @@ Step 6: the [desktop study is complete](docs/06-conventional-watermark-final-rep
 - [Development roadmap](ProofCam_Android_Development_Roadmap.xlsx)
 
 The original specification describes a broader release than the initial Android photo pilot. The product brief records the staged scope and the sharing-policy adjustment agreed during planning.
+
+An [iPhone research port](ios-benchmark/README.md) is prepared for the available iPhone 16 Pro. Portable Swift core tests and raw-pixel cross-decoder checks pass; Xcode compilation and physical iPhone validation remain pending. This adds an iOS experiment without changing the Android-first product scope or clearing the Android hardware blocker.

@@ -1,0 +1,45 @@
+{
+  "host_platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "status": "host_swift_parity_passed_not_ios_validation",
+  "fixtures": [
+    {
+      "fixture": "fixture0",
+      "swift_to_python": true,
+      "python_to_swift": true,
+      "java_to_swift": true,
+      "swift_roundtrip": true,
+      "maximum_channel_difference": 6,
+      "midpoint_blocks": 619
+    },
+    {
+      "fixture": "fixture1",
+      "swift_to_python": true,
+      "python_to_swift": true,
+      "java_to_swift": true,
+      "swift_roundtrip": true,
+      "maximum_channel_difference": 1,
+      "midpoint_blocks": 0
+    },
+    {
+      "fixture": "fixture2",
+      "swift_to_python": true,
+      "python_to_swift": true,
+      "java_to_swift": true,
+      "swift_roundtrip": true,
+      "maximum_channel_difference": 6,
+      "midpoint_blocks": 1
+    }
+  ],
+  "source_sha256": {
+    "ios-benchmark/Core/Package.swift": "dd591004ed3304b2784216801a9bcf11a540a2a97f5d185d7a34bc87a386928a",
+    "ios-benchmark/Core/Sources/CoreParity/main.swift": "2aa24254f995d6e35a7ff75966b591fff4cdf03a9ec420d4fe625a6cba1dcb3c",
+    "ios-benchmark/Core/Sources/ProofCamCore/Watermark.swift": "1ce976f658f76c29e51f93bff97c3a20595b4f7e3d14320f571e8454f1384243",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/CoreTests.swift": "cbbec821a64fbe44d54f082499f14016d81dacc67c8865cad8e5070232e91154",
+    "ios-benchmark/ProofCamResearch/App.swift": "3efc88c00a525b9dbdb3e10852fb00bd68f90688ccd22a91f994e269068316ee"
+  },
+  "limitations": [
+    "Host core check only; no Apple SDK build or physical iPhone execution",
+    "Raw RGB only; Apple JPEG, orientation, UI and performance untested",
+    "Three fixtures, not a robustness study; midpoint rounding differs from Python"
+  ]
+}
