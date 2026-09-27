@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-27T19:34:06.607686+00:00",
+  "candidate": "ios-tiled-sign24-secded-v2",
+  "release_suite": {
+    "discovered": 27,
+    "passed": 26,
+    "skipped": [
+      "HostSimulationTests.testSyntheticScreenshotMatrix (executed separately with fixtures)"
+    ],
+    "failures": 0
+  },
+  "simulation": {
+    "cases": 175,
+    "marked_matches": 69,
+    "marked_cases": 75,
+    "negative_detections": 0,
+    "negative_cases": 100,
+    "unexpected_ids": 0,
+    "test_assertion_failures": 0,
+    "note": "Transform misses are retained and do not fail the crash/ID-safety assertions"
+  },
+  "address_sanitizer": {
+    "passed": 4,
+    "skipped": [
+      "TiledTests.testPrepareFixtures"
+    ],
+    "errors": 0,
+    "leak_detection": false,
+    "scope": "TiledTests, not full simulation or Apple code"
+  },
+  "syntax_parse": "passed, not Apple SDK typechecking",
+  "xcode_project_consistency": "passed",
+  "apple_codec_tests": "five prepared, not executed",
+  "device_tests": "not executed",
+  "source_sha256": {
+    "ios-benchmark/Core/Package.swift": "bf02b5ab778798074a4460cfcaf97ccd9ed931a54b918e5f3f9a78a854bef124",
+    "ios-benchmark/Core/Sources/CoreParity/main.swift": "cd5400ed4dfd936bb04fe51091e96fa5c4f0158323ef1c53dffc72444c2b1d86",
+    "ios-benchmark/Core/Sources/ProofCamCore/AppleImageCodec.swift": "9ea7b5b0a83f7253092811f9e2bebfc9948e417d4ba72243508d62435bf443bc",
+    "ios-benchmark/Core/Sources/ProofCamCore/ResearchUtilities.swift": "a1802e45868bbfc9745773584029d8774facd629c3ee6b26864b94ae20b5502a",
+    "ios-benchmark/Core/Sources/ProofCamCore/TiledCandidate.swift": "7c53b661fb9ae2fc49e1856262da773e6f28ca861a3c5eabf4b5df0e924076b0",
+    "ios-benchmark/Core/Sources/ProofCamCore/Watermark.swift": "5ecfebe886cf80df35f89903baddda51dbe3afe99988955474228fa821a9ad3a",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/AppleCodecTests.swift": "8a051829f073f29e5fc4fa7caced290c4f3bbde9120430a952a501b6b75b7183",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/CoreTests.swift": "cbbec821a64fbe44d54f082499f14016d81dacc67c8865cad8e5070232e91154",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/ExtendedTests.swift": "174d9aec873dc71a99bdac14c7493d8fbf9f7fe2c81361524243680a7ee1ddb5",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/HostSimulationTests.swift": "014d202e694db802458258883b5301daf2ff8f5c1290dc0d06aa6bcba33d1679",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/TiledTests.swift": "9427e57c5c6b7e83d116762dfc15972676a94af458a161319da8a5d6f73a9593",
+    "ios-benchmark/ProofCamResearch/App.swift": "ca75f2d1c272aeed536d352110a0844d8c0978ce8e2206e24861c20127abd757"
+  }
+}

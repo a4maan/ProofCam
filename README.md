@@ -26,3 +26,5 @@ Step 6: the [desktop study is complete](docs/06-conventional-watermark-final-rep
 The original specification describes a broader release than the initial Android photo pilot. The product brief records the staged scope and the sharing-policy adjustment agreed during planning.
 
 An [iPhone research port](ios-benchmark/README.md) is prepared for the available iPhone 16 Pro. Portable Swift core tests and raw-pixel cross-decoder checks pass; Xcode compilation and physical iPhone validation remain pending. This adds an iOS experiment without changing the Android-first product scope or clearing the Android hardware blocker.
+
+The iPhone experiment now includes a [tiled v2 watermark](ios-benchmark/TILED-V2.md) for geometric recovery, alongside the original baseline. It trades visual quality and search time for robustness; device validation and product quality gates remain pending.

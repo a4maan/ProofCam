@@ -7,7 +7,7 @@ An iOS 17+ SwiftUI port of the Android watermark experiment, intended for the av
 ## Open on your Mac
 
 1. Clone `https://github.com/a4maan/ProofCam.git`, or run `git pull` in your existing checkout.
-2. From the repository root, run `bash ios-benchmark/tools/validate-mac.sh`. This runs Debug and Release core tests, four additional Apple image-codec tests on macOS, and an unsigned Release simulator build. A successful simulator build is not device validation.
+2. From the repository root, run `bash ios-benchmark/tools/validate-mac.sh`. This runs Debug and Release core tests, five additional Apple image-codec tests on macOS, and an unsigned Release simulator build. A successful simulator build is not device validation.
 3. Open `ios-benchmark/ProofCamResearch.xcodeproj`. In the ProofCamResearch target's **Signing & Capabilities**, select your Personal Team. If needed, change the bundle identifier to one unique to your account.
 4. Connect and trust your iPhone 16 Pro, enable Developer Mode if Xcode requests it, select the physical phone as the run destination, and press Run. The shared scheme uses Release optimization for useful timings. Stop the debugger and launch the installed app directly before collecting measurements.
 
@@ -24,6 +24,9 @@ Xcode and a free Apple Account support personal device testing; free provisionin
 A new source clears the previous run, including when loading fails. Results are in memory until exported; export before starting another source or closing the app. Selecting a cloud-backed Files location may involve the OS file provider; the app itself has no upload service.
 
 ## Candidate and limits
+
+New runs default to [tiled candidate v2](TILED-V2.md), with independent tiles, error correction, and bounded geometric searches. It is stronger and slower, and has greater visual distortion. Use the switch to select v1 for comparison. The description below documents the preserved v1 baseline. For v2 the app normalizes to a 1024-pixel long edge with upscaling; small-angle search and crop/resize combinations remain bounded.
+
 
 `ios-qim12-bilinear-v1` uses the same 176-bit PC + full 128-bit ID + CRC32 framing, three-frame minimum capacity, coefficient (1,2) QIM with step 12, and bounded native/1024/uniform-border search. Every eligible search view runs even after a detection, retaining conflicting IDs. A CRC checks accidental errors; it is not a signature or authenticity proof.
 

@@ -1,0 +1,290 @@
+{
+  "candidate": "ios-tiled-sign24-secded-v2",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "case_count": 175,
+  "comparison": {
+    "native": {
+      "v1": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "pillow_jpeg_95": {
+      "v1": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "pillow_jpeg_85": {
+      "v1": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "pillow_jpeg_70": {
+      "v1": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "resize_512": {
+      "v1": {
+        "cases": 3,
+        "matching": 2,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "uniform_screenshot_512": {
+      "v1": {
+        "cases": 3,
+        "matching": 2,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "resize_768": {
+      "v1": {
+        "cases": 3,
+        "matching": 1,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "uniform_screenshot_768": {
+      "v1": {
+        "cases": 3,
+        "matching": 1,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "resize_1024": {
+      "v1": {
+        "cases": 3,
+        "matching": 1,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "uniform_screenshot_1024": {
+      "v1": {
+        "cases": 3,
+        "matching": 1,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "crop_10percent": {
+      "v1": {
+        "cases": 3,
+        "matching": 0,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_90": {
+      "v1": {
+        "cases": 3,
+        "matching": 0,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "mirror": {
+      "v1": {
+        "cases": 3,
+        "matching": 0,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "nonuniform_chrome": {
+      "v1": {
+        "cases": 3,
+        "matching": 0,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "manual_rectangle": {
+      "v1": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_2_degrees": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_5_degrees": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_10_degrees": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_7_degrees": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_7.3_degrees": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 2,
+        "unexpected_ids": 0
+      }
+    },
+    "rotate_20_degrees": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 0,
+        "unexpected_ids": 0
+      }
+    },
+    "quarter_turn_ROTATE_180": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "quarter_turn_ROTATE_270": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "crop_then_half_size": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 1,
+        "unexpected_ids": 0
+      }
+    },
+    "nonuniform_chrome_resize_713": {
+      "v1": null,
+      "v2": {
+        "cases": 3,
+        "matching": 3,
+        "unexpected_ids": 0
+      }
+    },
+    "unmarked_noise": {
+      "v1": {
+        "cases": 100,
+        "matching": 100,
+        "unexpected_ids": 0
+      },
+      "v2": {
+        "cases": 100,
+        "matching": 100,
+        "unexpected_ids": 0
+      }
+    }
+  },
+  "host_search_milliseconds": {
+    "median": 645.747783,
+    "p95": 3636.148649,
+    "maximum": 6533.751816
+  },
+  "limitations": [
+    "Development fixtures used to select strength; no independent held-out qualification",
+    "Host timings are neither iPhone predictions nor a mobile performance pass",
+    "Only three marked sources, with multiple correlated transformations",
+    "Unsupported geometric combinations and removal of every complete tile can still fail"
+  ]
+}

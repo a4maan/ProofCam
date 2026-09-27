@@ -3,7 +3,7 @@ import XCTest
 @testable import ProofCamCore
 final class HostSimulationTests: XCTestCase {
     struct Input: Codable { let name: String; let file: String; let expected: String?; let mustRecover: Bool }
-    struct Result: Codable { let name: String; let expected: String?; let recovered: [String]; let matching: Bool; let unexpectedIDs: [String]; let attempts: [SearchAttempt] }
+    struct Result: Codable { let name: String; let elapsedMilliseconds: Double; let expected: String?; let recovered: [String]; let matching: Bool; let unexpectedIDs: [String]; let attempts: [SearchAttempt] }
     func testSyntheticScreenshotMatrix() throws {
         guard let directory = ProcessInfo.processInfo.environment["PROOFCAM_SIMULATION_DIRECTORY"] else { throw XCTSkip("Run tools/simulate.py to supply host-only fixtures") }
         let root = URL(fileURLWithPath: directory)
@@ -16,10 +16,12 @@ final class HostSimulationTests: XCTestCase {
             let width = number(0), height = number(4)
             guard width > 0, height > 0, width <= 16384, height <= 16384, width*height <= 20_000_000, bytes.count == 8+width*height*3 else { throw ResearchError.invalidDimensions }
             let pixels = stride(from:8,to:bytes.count,by:3).map { 0xff000000 | UInt32(bytes[$0]) << 16 | UInt32(bytes[$0+1]) << 8 | UInt32(bytes[$0+2]) }
-            let recovery = try RegisteredCandidate.extract(RGBImage(width:width,height:height,pixels:pixels))
+            let image = try RGBImage(width:width,height:height,pixels:pixels)
+            let start = DispatchTime.now().uptimeNanoseconds
+            let recovery = try ProcessInfo.processInfo.environment["PROOFCAM_TILED"] == "1" ? TiledCandidate.extract(image) : RegisteredCandidate.extract(image)
             let matching = input.expected.map { recovery.decodedIDs == [$0] } ?? recovery.decodedIDs.isEmpty
             let unexpected = recovery.decodedIDs.filter { $0 != input.expected }
-            results.append(Result(name:input.name,expected:input.expected,recovered:recovery.decodedIDs,matching:matching,unexpectedIDs:unexpected,attempts:recovery.attempts))
+            results.append(Result(name:input.name,elapsedMilliseconds:Double(DispatchTime.now().uptimeNanoseconds-start)/1e6,expected:input.expected,recovered:recovery.decodedIDs,matching:matching,unexpectedIDs:unexpected,attempts:recovery.attempts))
             if input.mustRecover { XCTAssertTrue(matching,input.name) }
             XCTAssertTrue(unexpected.isEmpty,"Unexpected ID: \(input.name)")
         }

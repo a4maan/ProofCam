@@ -77,3 +77,19 @@ ASAN_OPTIONS=detect_leaks=0 swift test --package-path ios-benchmark/Core --scrat
 ```
 
 The simulator stores generated pixels under ignored `benchmark/runs/ios-simulation-v1/`; the manifest hashes each input. No phone, Apple image codec, Apple SDK, or GUI was simulated.
+
+## Tiled v2 follow-up
+
+The app now defaults to the experimental [tiled v2 candidate](TILED-V2.md) for new runs; v1 remains selectable. The earlier tables above describe v1 and are retained as historical evidence.
+
+Final v2 validation:
+
+- Release suite: 26 tests passed, one fixture-dependent simulation test skipped in that invocation and executed separately.
+- Four tiled tests passed under AddressSanitizer; fixture generation was skipped, and leak detection was disabled.
+- Expanded simulation: **69/75 marked cases recovered**, plus **0/100 detections on procedural negatives**. There were no unexpected IDs. All 45 marked cases in the original matrix recovered.
+- All tested native images, JPEG qualities, plain resizes, uniform-border screenshots, 10% crops, quarter turns, mirrors, and nonuniform viewer frames recovered. All three 2°, 5°, 7° and 10° rotations recovered. The additional 7.3° rotation recovered 2/3; 20° recovered 0/3; cropping followed by halving size recovered 1/3. These remain failures, not exclusions.
+- Linux search median was about **646 ms**, p95 **3,636 ms**, maximum **6,534 ms** across this mixed matrix. These are not phone measurements and do not establish the mobile latency target.
+- Raw RGB SSIM on the single photo fell from approximately **0.994 (v1) to 0.941 (v2)**. V2 does not meet an invisible-watermark quality claim on this evidence. Two procedural images also have recorded quality comparisons.
+- App Swift syntax and project consistency checks passed. Five Apple codec tests, Xcode compilation, UI testing and physical iPhone behavior remain unverified.
+
+See [validation metadata and source hashes](../benchmark/reports/step06-ios-tiled-validation.json), [full comparison](../benchmark/reports/step06-ios-tiled-comparison.json), and [all simulation attempts](../benchmark/reports/step06-ios-tiled-simulation.json). Strength was selected on these development examples; they are not held-out qualification data.

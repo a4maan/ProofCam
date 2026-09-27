@@ -33,6 +33,12 @@ final class AppleCodecTests: XCTestCase {
         XCTAssertEqual(decoded.width,256); XCTAssertEqual(decoded.height,256)
         XCTAssertEqual(try DCTCore.extract(decoded),id)
     }
+    func testTiledAppleJPEGRecovery() throws {
+        let source = try RGBImage(width:320,height:288,pixels:Array(repeating:0xff808080,count:320*288))
+        let id = "00112233445566778899aabbccddeeff"
+        let decoded = try AppleImageCodec.decode(AppleImageCodec.jpeg(TiledCandidate.embed(source,id:id)))
+        XCTAssertTrue(TiledCandidate.tiles(decoded).contains { $0.0 == id })
+    }
     func testOrientationNormalization() throws {
         let decoded = try AppleImageCodec.decode(png(width:2,height:1,pixels:[255,0,0,255,0,0,255,255],orientation:6))
         XCTAssertEqual(decoded.width,1); XCTAssertEqual(decoded.height,2)

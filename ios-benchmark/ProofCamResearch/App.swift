@@ -28,12 +28,14 @@ struct Report: Codable {
 @MainActor final class Model: ObservableObject {
     @Published var status = "Import a JPEG or PNG from Files. Research use only."
     @Published var busy = false
+    @Published var useTiledCandidate = true
     @Published var marked: Data?
     @Published var report: Report?
     func load(_ url: URL, screenshot: Bool, rectangle: String, attested: Bool) {
         guard !busy else { return }; busy = true
         if !screenshot { report = nil; marked = nil }
         let prior = report
+        let tiled = useTiledCandidate
         Task {
             do {
                 let result = try await Task.detached(priority: .userInitiated) { () -> (Data?, Report) in
@@ -45,11 +47,11 @@ struct Report: Codable {
                         guard var current = prior else { throw ResearchError.invalidID }
                         let box = try ResearchUtilities.rectangle(rectangle)
                         let region = try box.map { try original.cropped($0) } ?? original
-                        let recovered = try RegisteredCandidate.extract(region)
+                        let recovered = try current.candidate == TiledCandidate.name ? TiledCandidate.extract(region) : RegisteredCandidate.extract(region)
                         current.screenshots.append(ScreenshotResult(sha256: sha(data), width: original.width, height: original.height, rectangle: box, operatorAttestedOSCapture: attested, recovery: recovered))
                         return (nil, current)
                     }
-                    let input = try original.atLongEdge(1024, upscale: false)
+                    let input = try original.atLongEdge(1024, upscale: tiled)
                     var random = [UInt8](repeating: 0, count: 16)
                     guard SecRandomCopyBytes(kSecRandomDefault, random.count, &random) == errSecSuccess else { throw ResearchError.invalidID }
                     let id = random.map { String(format: "%02x", $0) }.joined()
@@ -57,14 +59,16 @@ struct Report: Codable {
                     for iteration in 0..<23 {
                         try autoreleasepool {
                         let start = DispatchTime.now().uptimeNanoseconds
-                        output = try AppleImageCodec.jpeg(DCTCore.embed(input, id: id))
+                        let markedImage = try tiled ? TiledCandidate.embed(input, id: id) : DCTCore.embed(input, id: id)
+                        output = try AppleImageCodec.jpeg(markedImage)
                         let encoded = DispatchTime.now().uptimeNanoseconds
                         let decoded = try AppleImageCodec.decode(output)
                         let extractStart = DispatchTime.now().uptimeNanoseconds
-                        let recovery = try RegisteredCandidate.extract(decoded)
+                        let recovery = try tiled ? TiledCandidate.extract(decoded) : RegisteredCandidate.extract(decoded)
                         let end = DispatchTime.now().uptimeNanoseconds
                         if iteration >= 3 { samples.append(Sample(embedJPEGMilliseconds: Double(encoded-start)/1e6, extractMilliseconds: Double(end-extractStart)/1e6, recovery: recovery)) }
                         }
+                        await MainActor.run { self.status = iteration < 3 ? "Warmup \(iteration+1)/3" : "Measured sample \(iteration-2)/20" }
                     }
                     #if targetEnvironment(simulator)
                     let runtime = "simulator"
@@ -74,12 +78,14 @@ struct Report: Codable {
                     var system = utsname(); uname(&system)
                     let hardware = withUnsafeBytes(of: &system.machine) { bytes in String(decoding: bytes.prefix { $0 != 0 }, as: UTF8.self) }
                     let executable = Bundle.main.executableURL.flatMap { try? Data(contentsOf: $0) }.map(sha)
-                    return (output, Report(hardwareModel: hardware, executableSHA256: executable, inputWidth: input.width, inputHeight: input.height, candidate: RegisteredCandidate.name, createdAt: Date(), operatingSystem: ProcessInfo.processInfo.operatingSystemVersionString, runtime: runtime, sourceSHA256: sha(data), markedSHA256: sha(output), expectedID: id, warmups: 3, samples: samples, screenshots: []))
+                    return (output, Report(hardwareModel: hardware, executableSHA256: executable, inputWidth: input.width, inputHeight: input.height, candidate: tiled ? TiledCandidate.name : RegisteredCandidate.name, createdAt: Date(), operatingSystem: ProcessInfo.processInfo.operatingSystemVersionString, runtime: runtime, sourceSHA256: sha(data), markedSHA256: sha(output), expectedID: id, warmups: 3, samples: samples, screenshots: []))
                 }.value
                 if let data = result.0 { marked = data }; report = result.1
                 let correct = result.1.samples.filter { $0.recovery.decodedIDs == [result.1.expectedID] }.count
-                status = "Completed: \(correct)/20 JPEG recoveries. \(result.1.screenshots.count) screenshot tests recorded. Export JSON for all attempts. JPEG p95: \(Int(result.1.embedP95Milliseconds)) ms; extraction p95: \(Int(result.1.extractP95Milliseconds)) ms."
+                status = "\(result.1.candidate): \(correct)/20 JPEG recoveries. \(result.1.screenshots.count) screenshot tests recorded. Export JSON for all attempts. JPEG p95: \(Int(result.1.embedP95Milliseconds)) ms; extraction p95: \(Int(result.1.extractP95Milliseconds)) ms."
                 if let last = result.1.screenshots.last { status += " Latest screenshot: " + (last.recovery.decodedIDs == [result.1.expectedID] ? "matching ID." : last.recovery.decodedIDs.isEmpty ? "no ID recovered." : "different or conflicting IDs.") }
+            } catch ResearchError.insufficientCapacity where tiled {
+                status = "Failed: the normalized image must hold a complete 160×144-pixel tile for v2."
             } catch { status = "Failed: \(error.localizedDescription)" }
             busy = false
         }
@@ -97,6 +103,8 @@ struct ContentView: View {
             Form {
                 Section("Research benchmark") {
                     Text(model.status)
+                    Toggle("Use stronger tiled watermark (v2)", isOn: $model.useTiledCandidate).disabled(model.busy)
+                    Text("Applies to the next source. The tiled watermark improves recovery after some edits, but can be more visible and takes longer to search.").font(.footnote)
                     if model.busy { ProgressView("Running locally…") }
                     Button("Choose image and run 20 samples") { screenshot = false; rectangle = ""; attested = false; importing = true }.disabled(model.busy)
                     if let data = model.marked, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFit() }

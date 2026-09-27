@@ -1,0 +1,67 @@
+{
+  "candidate": "ios-tiled-sign24-secded-v2",
+  "scope": "Raw RGB distortion on three development fixtures, not Apple JPEG QA4 or held-out qualification",
+  "core_sha256": "7c53b661fb9ae2fc49e1856262da773e6f28ca861a3c5eabf4b5df0e924076b0",
+  "fixtures": [
+    {
+      "fixture": "fixture0",
+      "v1": {
+        "ssim_rgb_gaussian11": 0.9849686399025415,
+        "psnr_db": 47.704927471786235,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9253704819653178,
+        "psnr_db": 40.27926238196188,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "fixture0.rgb": "c87a4fd6a6372d36095d64eb0bdabe5df9da314f1d369a36288f58e1fab67df6",
+        "fixture0-swift.rgb": "36880f9707e01dba41430717c7e84abfb5172c54b616e3e189998400ad18bc4a",
+        "fixture0-tiled.rgb": "82e6d5f24a70dfb997dca95dac0dbe009c0c371ad5d644af22a1846a91b9c3a4"
+      }
+    },
+    {
+      "fixture": "fixture1",
+      "v1": {
+        "ssim_rgb_gaussian11": 0.999897292642665,
+        "psnr_db": 49.088388373091504,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9969250470709287,
+        "psnr_db": 34.36838251631844,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "fixture1.rgb": "c5087550e6a5222579b8a132be4bde55f3e719a81a7e8e2ae2b396f6382e230f",
+        "fixture1-swift.rgb": "ac1267d971ba2d6010de277cede824a7907975373bc98bf1e22331956b156c9d",
+        "fixture1-tiled.rgb": "cdfc4719e8eb8eca012491ca8eacc59f5eb173b31c5aefcf90b07cb6fd8f2e56"
+      }
+    },
+    {
+      "fixture": "fixture2",
+      "v1": {
+        "ssim_rgb_gaussian11": 0.9940318909478301,
+        "psnr_db": 49.012809276730714,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9407147172338334,
+        "psnr_db": 37.3532674398015,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "fixture2.rgb": "2449b28269ee9d78876fafe0871c65c357aca8d96cae2b6e7bf8cba5432ef087",
+        "fixture2-swift.rgb": "3d4e18b2fa4bef0deea45fa566b3469b4a5eaa66c9f65d402b6ae56471b36cf5",
+        "fixture2-tiled.rgb": "d4aea565b430c4e569f235d05b5317940fae528de852cb9f18d5c5efd57163e2"
+      }
+    }
+  ]
+}
