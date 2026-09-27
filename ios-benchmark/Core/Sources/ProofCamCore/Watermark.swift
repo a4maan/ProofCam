@@ -15,7 +15,7 @@ public enum ResearchError: Error, LocalizedError, Sendable {
 public struct RGBImage: Sendable, Equatable {
     public let width: Int
     public let height: Int
-    public var pixels: [UInt32] // Opaque ARGB, matching the Java core's bit layout.
+    public internal(set) var pixels: [UInt32] // Opaque ARGB, matching the Java core's bit layout.
     public init(width: Int, height: Int, pixels: [UInt32]) throws {
         guard width > 0, height > 0, width <= 16384, height <= 16384,
               width * height <= 20_000_000, pixels.count == width * height,

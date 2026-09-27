@@ -2,12 +2,12 @@
 
 An iOS 17+ SwiftUI port of the Android watermark experiment, intended for the available **iPhone 16 Pro**. This is research software, not the production capture/certificate app. It uses free local tools and no backend, analytics, accounts, or network requests.
 
-**Status:** source and Xcode project prepared. Five portable Swift tests and three raw RGB cross-decoder fixtures passed on Linux with Swift 6.0.3. The app source passes Swift syntax parsing. **No Apple SDK typecheck, Xcode build, simulator run, signing, or physical iPhone test has been performed here.** Run the Mac validation below before collecting evidence. See [host parity results](../benchmark/reports/step06-ios-parity.json).
+**Status:** source and Xcode project prepared. Nineteen portable Swift tests and three raw RGB cross-decoder fixtures passed on Linux with Swift 6.0.3. The app source passes Swift syntax parsing. See the [test audit](TESTING.md) for coverage and outstanding checks. **No Apple SDK typecheck, Xcode build, simulator run, signing, or physical iPhone test has been performed here.** Run the Mac validation below before collecting evidence. See [host parity results](../benchmark/reports/step06-ios-parity.json).
 
 ## Open on your Mac
 
 1. Clone `https://github.com/a4maan/ProofCam.git`, or run `git pull` in your existing checkout.
-2. From the repository root, run `bash ios-benchmark/tools/validate-mac.sh`. This runs the core tests and an unsigned Release simulator build. A successful simulator build is not device validation.
+2. From the repository root, run `bash ios-benchmark/tools/validate-mac.sh`. This runs Debug and Release core tests, four additional Apple image-codec tests on macOS, and an unsigned Release simulator build. A successful simulator build is not device validation.
 3. Open `ios-benchmark/ProofCamResearch.xcodeproj`. In the ProofCamResearch target's **Signing & Capabilities**, select your Personal Team. If needed, change the bundle identifier to one unique to your account.
 4. Connect and trust your iPhone 16 Pro, enable Developer Mode if Xcode requests it, select the physical phone as the run destination, and press Run. The shared scheme uses Release optimization for useful timings. Stop the debugger and launch the installed app directly before collecting measurements.
 

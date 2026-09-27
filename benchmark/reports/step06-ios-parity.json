@@ -31,11 +31,15 @@
     }
   ],
   "source_sha256": {
-    "ios-benchmark/Core/Package.swift": "dd591004ed3304b2784216801a9bcf11a540a2a97f5d185d7a34bc87a386928a",
-    "ios-benchmark/Core/Sources/CoreParity/main.swift": "2aa24254f995d6e35a7ff75966b591fff4cdf03a9ec420d4fe625a6cba1dcb3c",
-    "ios-benchmark/Core/Sources/ProofCamCore/Watermark.swift": "1ce976f658f76c29e51f93bff97c3a20595b4f7e3d14320f571e8454f1384243",
+    "ios-benchmark/Core/Package.swift": "bf02b5ab778798074a4460cfcaf97ccd9ed931a54b918e5f3f9a78a854bef124",
+    "ios-benchmark/Core/Sources/CoreParity/main.swift": "cd5400ed4dfd936bb04fe51091e96fa5c4f0158323ef1c53dffc72444c2b1d86",
+    "ios-benchmark/Core/Sources/ProofCamCore/AppleImageCodec.swift": "9ea7b5b0a83f7253092811f9e2bebfc9948e417d4ba72243508d62435bf443bc",
+    "ios-benchmark/Core/Sources/ProofCamCore/ResearchUtilities.swift": "a1802e45868bbfc9745773584029d8774facd629c3ee6b26864b94ae20b5502a",
+    "ios-benchmark/Core/Sources/ProofCamCore/Watermark.swift": "5ecfebe886cf80df35f89903baddda51dbe3afe99988955474228fa821a9ad3a",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/AppleCodecTests.swift": "a75d944cd23800a4859285d904a67982e1b5f95c861caf89027d363e1c990387",
     "ios-benchmark/Core/Tests/ProofCamCoreTests/CoreTests.swift": "cbbec821a64fbe44d54f082499f14016d81dacc67c8865cad8e5070232e91154",
-    "ios-benchmark/ProofCamResearch/App.swift": "3efc88c00a525b9dbdb3e10852fb00bd68f90688ccd22a91f994e269068316ee"
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/ExtendedTests.swift": "174d9aec873dc71a99bdac14c7493d8fbf9f7fe2c81361524243680a7ee1ddb5",
+    "ios-benchmark/ProofCamResearch/App.swift": "00536825a4b6d58df5ad71fd0a55b801575f1c852302f58dada13b91d29c1794"
   },
   "limitations": [
     "Host core check only; no Apple SDK build or physical iPhone execution",
