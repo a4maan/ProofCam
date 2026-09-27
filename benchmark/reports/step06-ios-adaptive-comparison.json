@@ -1,0 +1,152 @@
+{
+  "candidate": "ios-tiled-adaptive-conv-v3",
+  "source_sha256": {
+    "ios-benchmark/tools/simulate_adaptive.py": "ca000192e5920af73f7f516b3115c59c39668b7545c22bc3203fa1d537b6a754",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/HostSimulationTests.swift": "cc81474da79225a9df842f10f2ad1983f62d92926bc1a14f71320a0e49b5a695",
+    "ios-benchmark/Core/Sources/ProofCamCore/Watermark.swift": "5ecfebe886cf80df35f89903baddda51dbe3afe99988955474228fa821a9ad3a",
+    "ios-benchmark/Core/Sources/ProofCamCore/TiledCandidate.swift": "7c53b661fb9ae2fc49e1856262da773e6f28ca861a3c5eabf4b5df0e924076b0",
+    "ios-benchmark/Core/Sources/ProofCamCore/AdaptiveCandidate.swift": "61221c9138ce6e2201229eed7fd571b8ebb86fd58b26687dd240fa8e7f269d01",
+    "ios-benchmark/Core/Sources/ProofCamCore/GrayPlane.swift": "edcb944c45c3fdcf2f99bba810220f9f3ed7fcb222b377f4f3338c410c2dfc00"
+  },
+  "shared_marked_cases": {
+    "count": 75,
+    "v2_matching": 69,
+    "v3_matching": 75
+  },
+  "additional_photo_cases": {
+    "count": 50,
+    "matching": 50
+  },
+  "host_search_milliseconds": {
+    "median": 4391.719251,
+    "p95": 6902.986987,
+    "maximum": 8952.810131
+  },
+  "fixtures": [
+    {
+      "fixture": "fixture0",
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9253704819653178,
+        "psnr_db": 40.27926238196188,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v3": {
+        "ssim_rgb_gaussian11": 0.9477000915924073,
+        "psnr_db": 41.351148732456736,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "fixture0.rgb": "c87a4fd6a6372d36095d64eb0bdabe5df9da314f1d369a36288f58e1fab67df6",
+        "fixture0-tiled.rgb": "82e6d5f24a70dfb997dca95dac0dbe009c0c371ad5d644af22a1846a91b9c3a4",
+        "fixture0-adaptive.rgb": "0023e7b4b965724fbce58e490dd0a87fe5a9bd084812e30c231512814f6d3d05"
+      }
+    },
+    {
+      "fixture": "fixture1",
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9969250470709287,
+        "psnr_db": 34.36838251631844,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v3": {
+        "ssim_rgb_gaussian11": 0.9933160662492249,
+        "psnr_db": 30.966120727827104,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "fixture1.rgb": "c5087550e6a5222579b8a132be4bde55f3e719a81a7e8e2ae2b396f6382e230f",
+        "fixture1-tiled.rgb": "cdfc4719e8eb8eca012491ca8eacc59f5eb173b31c5aefcf90b07cb6fd8f2e56",
+        "fixture1-adaptive.rgb": "84b14993d664b05b8eaf5db783feb324719f52d2ada718b8ce0765a1c2aa45e8"
+      }
+    },
+    {
+      "fixture": "fixture2",
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9407147172338334,
+        "psnr_db": 37.3532674398015,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v3": {
+        "ssim_rgb_gaussian11": 0.9577651733684938,
+        "psnr_db": 37.45195109679636,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "fixture2.rgb": "2449b28269ee9d78876fafe0871c65c357aca8d96cae2b6e7bf8cba5432ef087",
+        "fixture2-tiled.rgb": "d4aea565b430c4e569f235d05b5317940fae528de852cb9f18d5c5efd57163e2",
+        "fixture2-adaptive.rgb": "ec8dca0453184d83f234c32d04e10280ee49ee08ceb4f4143a71cd3ff92f3756"
+      }
+    },
+    {
+      "fixture": "holdout0",
+      "v2": {
+        "ssim_rgb_gaussian11": 0.912274850837881,
+        "psnr_db": 37.43553858381673,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v3": {
+        "ssim_rgb_gaussian11": 0.9500740927475664,
+        "psnr_db": 37.49882571301135,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "holdout0.rgb": "953d203b4682efec5bb9f6d3de8f680079511bc2eb14833343388ded0e6ed2e9",
+        "holdout0-tiled.rgb": "78ddc27dd2b28b8a6d612a4504f9247ec5fd54a1b558ef870e5696a76ac74868",
+        "holdout0-adaptive.rgb": "4da31bd166603ddd13597fb0364590186d78e1087d9ab344db929f55e637cdb9"
+      }
+    },
+    {
+      "fixture": "holdout1",
+      "v2": {
+        "ssim_rgb_gaussian11": 0.9470275285508356,
+        "psnr_db": 36.950937457923914,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "v3": {
+        "ssim_rgb_gaussian11": 0.9616438071648086,
+        "psnr_db": 36.437361831581796,
+        "identical_pixels": false,
+        "note": "PSNR null for identical pixels (infinite); compare identically encoded unwatermarked/watermarked exports only for QA4."
+      },
+      "file_sha256": {
+        "holdout1.rgb": "2cabba23d222a768ee71232fb8e00a258a1754979561d04d85139dfd6ee9aa73",
+        "holdout1-tiled.rgb": "38e67e55b6118061738f94d17ac6b2f951d6a07881c0eab1ed48b958e855fd09",
+        "holdout1-adaptive.rgb": "fd8829b31f483eb4454db5f9cb4a27a9fe88458769d85d1d80603f1964d0b65b"
+      }
+    }
+  ],
+  "additional_photo_selection": {
+    "rule": "Manifest entries 1 and 2, after the existing development photo at entry 0; selected before evaluating the frozen v3 design",
+    "sources": [
+      {
+        "name": "holdout0",
+        "source_path": "data/media/00455ae2731e1046.jpg",
+        "normalized_rgb_sha256": "953d203b4682efec5bb9f6d3de8f680079511bc2eb14833343388ded0e6ed2e9",
+        "width": 1024,
+        "height": 768
+      },
+      {
+        "name": "holdout1",
+        "source_path": "data/media/00d3653a790b5fba.jpg",
+        "normalized_rgb_sha256": "2cabba23d222a768ee71232fb8e00a258a1754979561d04d85139dfd6ee9aa73",
+        "width": 1024,
+        "height": 960
+      }
+    ]
+  },
+  "limitations": [
+    "Raw RGB quality, not Apple JPEG quality or visual approval",
+    "Two additional photos selected before frozen v3 evaluation; not broad independent qualification",
+    "Host timings are not iPhone performance predictions",
+    "Only the original three sources have v2 recovery comparisons; v2 pixel quality measured for all five"
+  ]
+}

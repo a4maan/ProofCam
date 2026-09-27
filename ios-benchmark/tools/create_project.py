@@ -6,7 +6,7 @@ def ident(s): return hashlib.sha256(s.encode()).hexdigest()[:24].upper()
 objects = {}
 def add(name, body): objects[ident(name)] = '{ ' + body + ' };'; return ident(name)
 files=[]; builds=[]
-for path in ['ProofCamResearch/App.swift', 'Core/Sources/ProofCamCore/Watermark.swift', 'Core/Sources/ProofCamCore/ResearchUtilities.swift', 'Core/Sources/ProofCamCore/AppleImageCodec.swift', 'Core/Sources/ProofCamCore/TiledCandidate.swift']:
+for path in ['ProofCamResearch/App.swift', 'Core/Sources/ProofCamCore/Watermark.swift', 'Core/Sources/ProofCamCore/ResearchUtilities.swift', 'Core/Sources/ProofCamCore/AppleImageCodec.swift', 'Core/Sources/ProofCamCore/TiledCandidate.swift', 'Core/Sources/ProofCamCore/AdaptiveCandidate.swift', 'Core/Sources/ProofCamCore/GrayPlane.swift']:
     f=add(path, f'isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = "<group>";')
     files.append(f); builds.append(add('build'+path, f'isa = PBXBuildFile; fileRef = {f};'))
 product=add('product','isa = PBXFileReference; explicitFileType = wrapper.application; path = ProofCamResearch.app; sourceTree = BUILT_PRODUCTS_DIR;')

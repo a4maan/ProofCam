@@ -27,4 +27,4 @@ The original specification describes a broader release than the initial Android 
 
 An [iPhone research port](ios-benchmark/README.md) is prepared for the available iPhone 16 Pro. Portable Swift core tests and raw-pixel cross-decoder checks pass; Xcode compilation and physical iPhone validation remain pending. This adds an iOS experiment without changing the Android-first product scope or clearing the Android hardware blocker.
 
-The iPhone experiment now includes a [tiled v2 watermark](ios-benchmark/TILED-V2.md) for geometric recovery, alongside the original baseline. It trades visual quality and search time for robustness; device validation and product quality gates remain pending.
+The iPhone experiment defaults to an [adaptive tiled v3 watermark](ios-benchmark/ADAPTIVE-V3.md), with v1/v2 retained for comparison. It recovers all 125 marked host simulation cases, including the six previous v2 misses. The broader search is slower; device validation and product quality gates remain pending.

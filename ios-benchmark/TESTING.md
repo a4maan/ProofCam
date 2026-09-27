@@ -80,7 +80,7 @@ The simulator stores generated pixels under ignored `benchmark/runs/ios-simulati
 
 ## Tiled v2 follow-up
 
-The app now defaults to the experimental [tiled v2 candidate](TILED-V2.md) for new runs; v1 remains selectable. The earlier tables above describe v1 and are retained as historical evidence.
+This section records the experimental [tiled v2 candidate](TILED-V2.md); the app now defaults to v3, with v1/v2 selectable. The earlier tables above describe v1 and are retained as historical evidence.
 
 Final v2 validation:
 
@@ -93,3 +93,13 @@ Final v2 validation:
 - App Swift syntax and project consistency checks passed. Five Apple codec tests, Xcode compilation, UI testing and physical iPhone behavior remain unverified.
 
 See [validation metadata and source hashes](../benchmark/reports/step06-ios-tiled-validation.json), [full comparison](../benchmark/reports/step06-ios-tiled-comparison.json), and [all simulation attempts](../benchmark/reports/step06-ios-tiled-simulation.json). Strength was selected on these development examples; they are not held-out qualification data.
+
+## Adaptive v3 follow-up
+
+The [v3 design and reproduction steps](ADAPTIVE-V3.md) describe the current default. The frozen decoder recovered **125/125 marked cases** (25 transforms on five sources), with **0/100 noise detections** and no unexpected IDs. The original three sources improve from 69/75 with v2 to 75/75; two photos selected before evaluation contribute another 50/50. This small set is not production qualification.
+
+The final Linux Release suite discovered 34 tests: 30 passed and four optional fixture/simulation/diagnostic tests skipped. The simulation ran separately. Five active v3 tests cover independent encoder vectors, CRC rejection, soft correction, DCT recurrence, all eight symmetries with conflicting IDs, saturated colors and untouched partial-tile edges. The five active v3 tests also passed under AddressSanitizer (two optional tests skipped; leak detection disabled). App syntax parsing and deterministic project generation passed. Six Apple codec tests are prepared but unexecuted here.
+
+Photo SSIM improves over v2 on all three photos, but PSNR decreases on one photo and both metrics worsen on the procedural noise source. Host median search is 4.392 seconds, p95 6.903 seconds, maximum 8.953 seconds across the 225 cases; this is slower than v2 and is not an iPhone prediction. Invisibility, phone latency, Apple codecs and physical screenshots remain unqualified.
+
+See [simulation](../benchmark/reports/step06-ios-adaptive-simulation.json), [quality and comparison](../benchmark/reports/step06-ios-adaptive-comparison.json), and [validation metadata](../benchmark/reports/step06-ios-adaptive-validation.json).

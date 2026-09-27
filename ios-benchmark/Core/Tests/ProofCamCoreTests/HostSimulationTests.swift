@@ -9,7 +9,8 @@ final class HostSimulationTests: XCTestCase {
         let root = URL(fileURLWithPath: directory)
         let inputs = try JSONDecoder().decode([Input].self, from: Data(contentsOf: root.appendingPathComponent("inputs.json")))
         var results = [Result]()
-        for input in inputs {
+        for (caseIndex,input) in inputs.enumerated() {
+            if caseIndex%10==0 { FileHandle.standardError.write(Data("Simulation \(caseIndex)/\(inputs.count)\n".utf8)) }
             let bytes = Array(try Data(contentsOf: root.appendingPathComponent(input.file)))
             func number(_ offset: Int) -> Int { bytes[offset..<offset+4].reduce(0) { ($0 << 8) | Int($1) } }
             guard bytes.count >= 8 else { throw ResearchError.invalidDimensions }
@@ -18,7 +19,10 @@ final class HostSimulationTests: XCTestCase {
             let pixels = stride(from:8,to:bytes.count,by:3).map { 0xff000000 | UInt32(bytes[$0]) << 16 | UInt32(bytes[$0+1]) << 8 | UInt32(bytes[$0+2]) }
             let image = try RGBImage(width:width,height:height,pixels:pixels)
             let start = DispatchTime.now().uptimeNanoseconds
-            let recovery = try ProcessInfo.processInfo.environment["PROOFCAM_TILED"] == "1" ? TiledCandidate.extract(image) : RegisteredCandidate.extract(image)
+            let recovery: Recovery
+            if ProcessInfo.processInfo.environment["PROOFCAM_ADAPTIVE"] == "1" { recovery = try AdaptiveCandidate.extract(image) }
+            else if ProcessInfo.processInfo.environment["PROOFCAM_TILED"] == "1" { recovery = try TiledCandidate.extract(image) }
+            else { recovery = try RegisteredCandidate.extract(image) }
             let matching = input.expected.map { recovery.decodedIDs == [$0] } ?? recovery.decodedIDs.isEmpty
             let unexpected = recovery.decodedIDs.filter { $0 != input.expected }
             results.append(Result(name:input.name,elapsedMilliseconds:Double(DispatchTime.now().uptimeNanoseconds-start)/1e6,expected:input.expected,recovered:recovery.decodedIDs,matching:matching,unexpectedIDs:unexpected,attempts:recovery.attempts))
