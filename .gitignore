@@ -21,3 +21,7 @@ benchmark/runs/
 __pycache__/
 *.pyc
 .venv/
+
+# Local provenance credentials, database, media and developer environment
+.venv-provenance/
+provenance/local/

@@ -103,3 +103,9 @@ The final Linux Release suite discovered 34 tests: 30 passed and four optional f
 Photo SSIM improves over v2 on all three photos, but PSNR decreases on one photo and both metrics worsen on the procedural noise source. Host median search is 4.392 seconds, p95 6.903 seconds, maximum 8.953 seconds across the 225 cases; this is slower than v2 and is not an iPhone prediction. Invisibility, phone latency, Apple codecs and physical screenshots remain unqualified.
 
 See [simulation](../benchmark/reports/step06-ios-adaptive-simulation.json), [quality and comparison](../benchmark/reports/step06-ios-adaptive-comparison.json), and [validation metadata](../benchmark/reports/step06-ios-adaptive-validation.json).
+
+## Provenance infrastructure follow-up
+
+The app now includes a separate development camera/signing path. Four portable tests compare CBOR and signature-input bytes with Python, reject malformed invitations/IDs/signature sizes, and exercise encoding boundaries. The Linux Release suite discovers 38 tests (34 passed, four optional skips). Two additional CryptoKit tests verify a Python ES256 vector and raw signature construction on Apple platforms; these and the six Apple codec tests remain unexecuted here.
+
+Backend security/integration evidence is recorded separately in [provenance validation](../provenance/validation.json). Run the Mac validation script, then test camera permission denial, real camera capture, enrollment, Secure Enclave availability/locking, app relaunch, interrupted/low-storage writes, backup exclusion, exported-file integrity, registration retries and modified-file rejection. No server attestation or production capture assurance is claimed.

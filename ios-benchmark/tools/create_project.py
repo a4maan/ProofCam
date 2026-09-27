@@ -6,7 +6,7 @@ def ident(s): return hashlib.sha256(s.encode()).hexdigest()[:24].upper()
 objects = {}
 def add(name, body): objects[ident(name)] = '{ ' + body + ' };'; return ident(name)
 files=[]; builds=[]
-for path in ['ProofCamResearch/App.swift', 'Core/Sources/ProofCamCore/Watermark.swift', 'Core/Sources/ProofCamCore/ResearchUtilities.swift', 'Core/Sources/ProofCamCore/AppleImageCodec.swift', 'Core/Sources/ProofCamCore/TiledCandidate.swift', 'Core/Sources/ProofCamCore/AdaptiveCandidate.swift', 'Core/Sources/ProofCamCore/GrayPlane.swift']:
+for path in ['ProofCamResearch/App.swift', 'ProofCamResearch/CaptureProvenance.swift', 'Core/Sources/ProofCamCore/ProvenanceWire.swift', 'Core/Sources/ProofCamCore/Watermark.swift', 'Core/Sources/ProofCamCore/ResearchUtilities.swift', 'Core/Sources/ProofCamCore/AppleImageCodec.swift', 'Core/Sources/ProofCamCore/TiledCandidate.swift', 'Core/Sources/ProofCamCore/AdaptiveCandidate.swift', 'Core/Sources/ProofCamCore/GrayPlane.swift']:
     f=add(path, f'isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = "<group>";')
     files.append(f); builds.append(add('build'+path, f'isa = PBXBuildFile; fileRef = {f};'))
 product=add('product','isa = PBXFileReference; explicitFileType = wrapper.application; path = ProofCamResearch.app; sourceTree = BUILT_PRODUCTS_DIR;')
@@ -20,7 +20,7 @@ for scope in ['project','target']:
     for mode in ['Debug','Release']:
         settings='IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; '
         settings += 'SWIFT_OPTIMIZATION_LEVEL = "-O"; ' if mode=='Release' else 'SWIFT_OPTIMIZATION_LEVEL = "-Onone"; '
-        if scope=='target': settings+='PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = com.a4maan.proofcam.research; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "ProofCam Research"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait; TARGETED_DEVICE_FAMILY = 1; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; '
+        if scope=='target': settings+='PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = com.a4maan.proofcam.research; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "ProofCam Research"; INFOPLIST_KEY_NSCameraUsageDescription = "Take a photo and bind its final export to a device-signed development request."; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait; TARGETED_DEVICE_FAMILY = 1; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; '
         ids.append(add(scope+mode,f'isa = XCBuildConfiguration; buildSettings = {{ {settings} }}; name = {mode};'))
     configs[scope]=add(scope+'configs',f'isa = XCConfigurationList; buildConfigurations = ({",".join(ids)},); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;')
 target=add('target',f'isa = PBXNativeTarget; buildConfigurationList = {configs["target"]}; buildPhases = ({sources},{frameworks},); buildRules = (); dependencies = (); name = ProofCamResearch; productName = ProofCamResearch; productReference = {product}; productType = "com.apple.product-type.application";')
