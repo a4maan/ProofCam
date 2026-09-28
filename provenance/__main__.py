@@ -11,7 +11,7 @@ from pathlib import Path
 from .http_server import make_server
 from .protocol import MAX_MESSAGE, Rejected, decode, encode, hexstr, key_id, message, public_bytes, sign
 from .service import Service
-from .storage import create_key, load_key, private_write
+from .storage import create_key, load_key, private_write, regular_reader
 from .verifier import development_trust, file_hash, verify_file
 
 
@@ -36,7 +36,7 @@ def request(base, route, body=None):
 
 
 def read(path):
-    with Path(path).open('rb') as stream:
+    with regular_reader(path) as stream:
         result = stream.read(MAX_MESSAGE+1)
     decode(result)
     return result

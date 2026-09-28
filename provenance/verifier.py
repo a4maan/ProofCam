@@ -1,7 +1,7 @@
 """Independent, offline verification; certificate contents never select trust or URLs."""
 import hashlib
 import time
-from pathlib import Path
+from .storage import regular_reader
 
 from .protocol import (Rejected, fields, hexstr, integer, key_id, public_bytes, public_key,
                        typed, unpack, verify)
@@ -11,7 +11,7 @@ MAX_FILE = 25 * 1024 * 1024
 
 def file_hash(path):
     digest, total = hashlib.sha256(), 0
-    with Path(path).open('rb') as stream:
+    with regular_reader(path) as stream:
         while chunk := stream.read(1024*1024):
             total += len(chunk)
             if total > MAX_FILE:

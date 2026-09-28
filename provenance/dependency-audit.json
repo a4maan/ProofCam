@@ -1,0 +1,47 @@
+{
+  "checked_at_utc": "2026-09-28T02:53:36.216044+00:00",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "scope": "Four pinned PyPI dependencies only; not an OS/Apple SDK/bundled-native-library or source-code security audit",
+  "packages": [
+    {
+      "query": {
+        "package": {
+          "name": "cryptography",
+          "ecosystem": "PyPI"
+        },
+        "version": "50.0.1"
+      },
+      "result": {}
+    },
+    {
+      "query": {
+        "package": {
+          "name": "cbor2",
+          "ecosystem": "PyPI"
+        },
+        "version": "6.1.4"
+      },
+      "result": {}
+    },
+    {
+      "query": {
+        "package": {
+          "name": "cffi",
+          "ecosystem": "PyPI"
+        },
+        "version": "2.1.1"
+      },
+      "result": {}
+    },
+    {
+      "query": {
+        "package": {
+          "name": "pycparser",
+          "ecosystem": "PyPI"
+        },
+        "version": "3.0"
+      },
+      "result": {}
+    }
+  ]
+}

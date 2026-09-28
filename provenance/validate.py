@@ -31,6 +31,9 @@ def main():
     run('project',[sys.executable,'ios-benchmark/tools/create_project.py'])
     assert project.read_bytes()==old,'Project regeneration differs'
     count=int(re.search(r'Ran (\d+) tests',backend).group(1))
+    skip_match=re.search(r'OK \(skipped=(\d+)\)',backend)
+    backend_skipped=int(skip_match.group(1)) if skip_match else 0
+    mutation_count=int(re.search(r'CHECK bit_mutations=(\d+)',backend).group(1))
     suites=re.findall(r'Executed (\d+) tests, with (\d+) tests skipped and (\d+) failures',swift)
     discovered,skipped,failures=map(int,suites[-1])
     frozen=json.loads((root/'benchmark/reports/step06-ios-adaptive-simulation.json').read_text())
@@ -43,7 +46,11 @@ def main():
     paths += list((root/'ios-benchmark/Core/Tests/ProofCamCoreTests').glob('Provenance*.swift'))
     report={'scope':'Local development protocol; no production assurance or device evidence',
             'validated_at_utc':datetime.now(timezone.utc).isoformat(),'host':platform.platform(),
-            'python':platform.python_version(), 'backend_tests':{'passed':count,'failures':0},
+            'python':platform.python_version(), 'backend_tests':{'discovered':count,'passed':count-backend_skipped,'skipped':backend_skipped,'failures':0},
+            'additional_checks':{'single_bit_request_mutations_rejected':mutation_count,
+                                 'seeded_random_messages_rejected':2000,
+                                 'process_death':'before commit rolls back; after commit permits exact retry',
+                                 'openssl_cli':'request signing and certificate verification tested when installed'},
             'swift_release':{'discovered':discovered,'passed':discovered-skipped,'skipped':skipped,'failures':failures},
             'app_syntax':'passed; not Apple SDK typechecking','project_generation':'deterministic',
             'v3_simulation_source_hashes':'unchanged; no watermark algorithm modifications',

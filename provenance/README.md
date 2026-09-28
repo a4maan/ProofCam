@@ -34,7 +34,7 @@ python3 -m venv .venv-provenance
 
 The last command runs the development service on `127.0.0.1:8765`. Keep that terminal open. On Linux, the distribution's Python venv support must be installed. Keys, database and example outputs live under the ignored `provenance/local/` directory. Issuer keys are development PEM files, not protected production signing keys. Use a private filesystem directory; POSIX permission settings do not substitute for Windows/WSL host access controls.
 
-Trust files expire after 24 hours. Refresh deliberately with `export-trust --out provenance/local/trust-next.cbor`; distribute that file through a trusted local channel. The verifier never obtains trust roots from a certificate or a lookup endpoint. Existing output files are not overwritten.
+Trust files expire after 24 hours. Refresh deliberately with `export-trust --out provenance/local/trust-next.cbor`; distribute that file through a trusted local channel. The verifier never obtains trust roots from a certificate or a lookup endpoint. Existing output files are not overwritten. Files are staged privately, flushed to disk and atomically published only after a complete write. This requires a local filesystem supporting hard links. Interrupted pre-publication saves can leave private `.pending` staging files, which are never used as valid requests or keys. Input files must be regular files; pipes and device nodes are rejected.
 
 ## iPhone → local registration → independent verification
 
@@ -78,6 +78,10 @@ The example ID is for one local experiment; use a fresh 128-bit random ID for ea
 ## Evidence and remaining gates
 
 See [protocol](PROTOCOL.md), [validation report](validation.json) and automated tests. Backend tests cover real loopback HTTP and separate-process CLI use, altered files, forged/wrong-domain signatures, default development rejection, admission, quotas, stale/revoked trust, conflicting/replayed requests, concurrent races, rollback, restart, removal and non-reuse. Swift tests compare exact CBOR/signature-input bytes against Python. Two CryptoKit cross-checks are prepared for Mac execution.
+
+The follow-up audit expands the backend suite to **37 tests**, including actual process termination before/after commit, eight-way enrollment races, two-owner ID collisions, deletion rollback, malformed HTTP framing, 3,296 single-bit mutations of a signed request, 2,000 seeded random messages, and independent OpenSSL command-line signing/verification. It found and fixed two reliability defects: failed export publication and blocking named-pipe inputs. Atomic export races, simulated disk failures, empty/oversized inputs and the actual workspace filesystem are now checked. These are targeted engineering checks, not an independent security audit or exhaustive fuzzing.
+
+The [dependency advisory snapshot](dependency-audit.json) records an [OSV query](https://google.github.io/osv.dev/post-v1-querybatch/) for the four pinned Python packages. No advisories were returned for those versions at the recorded time. This does not cover the host OS, Apple SDK or native libraries bundled in wheels; a clean result does not prove the dependencies are vulnerability-free.
 
 **Not implemented or qualified:** server validation of Apple App Attest/Android attestation, protected sensor-to-signature provenance, production protected signing/trust distribution, canonical-pixel matching, automatic mobile registration/reconciliation, accountless recovery credentials, authoritative deletion-journal replay after backup restore, public hosting/TLS/operational hardening, full policy retention jobs, independent security review, and Android integration. Failed or unsupported attestations cannot be submitted as successful booleans; this protocol has no attestation-success issuance path.
 

@@ -1,11 +1,19 @@
 {
   "scope": "Local development protocol; no production assurance or device evidence",
-  "validated_at_utc": "2026-09-27T22:06:03.891702+00:00",
+  "validated_at_utc": "2026-09-28T02:55:29.283487+00:00",
   "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
   "python": "3.12.3",
   "backend_tests": {
-    "passed": 22,
+    "discovered": 37,
+    "passed": 37,
+    "skipped": 0,
     "failures": 0
+  },
+  "additional_checks": {
+    "single_bit_request_mutations_rejected": 3296,
+    "seeded_random_messages_rejected": 2000,
+    "process_death": "before commit rolls back; after commit permits exact retry",
+    "openssl_cli": "request signing and certificate verification tested when installed"
   },
   "swift_release": {
     "discovered": 38,
@@ -13,7 +21,7 @@
     "skipped": 4,
     "failures": 0
   },
-  "app_syntax": "passed after final camera ID generation and view extraction changes; not Apple SDK typechecking",
+  "app_syntax": "passed; not Apple SDK typechecking",
   "project_generation": "deterministic",
   "v3_simulation_source_hashes": "unchanged; no watermark algorithm modifications",
   "apple_tests": "six codec and two CryptoKit tests prepared; not run on this Linux host",
@@ -29,15 +37,16 @@
     "ios-benchmark/ProofCamResearch.xcodeproj/project.pbxproj": "014a4e60b5c0a068fe9a8577bd05be7bf492013a393e92fa38e8ad15e8ba0755",
     "ios-benchmark/tools/create_project.py": "de5a0d378a037b2c71d75073877ffa0b19afa2f23810a76bc682aa697fab51f2",
     "provenance/__init__.py": "b171e4d1eed3d0a2d2f827a81146d239c0a9e28b9ad822c0b18079099ff8397f",
-    "provenance/__main__.py": "2723a593a0ab8d9744899e677c22af630e9a07a3c4931d7f33d3567016ac8648",
+    "provenance/__main__.py": "5283cc2aface25d729835a049f9a52b0c29ff49906dc3b2d78026736a0207cfa",
     "provenance/http_server.py": "88b9844d7f338439da4a591e251ba150b7bf559337530e4d0767467fb85a0f93",
     "provenance/protocol.py": "4b99435500c3a4f2b085ef59c6da2eb6610deaeacbfe8bda1234eb78d92d808a",
     "provenance/requirements.txt": "09fb28a3b2e790ee8093b657fcd2a8fd142e98ca8956542e6ccadaea71ed2b99",
     "provenance/service.py": "16bfe4c1df58b11ab359a6471ce1fc21478b38a1a76b412d61ed1ffc126d66b8",
-    "provenance/storage.py": "099d49c165345a81d07e958eb034b9e544dfe770de15d4bf752367aa03562a33",
+    "provenance/storage.py": "8287d41a271b2cf5085297b292d7b1d90d4771f955cb54c4acd8bcb7a71ecd09",
+    "provenance/tests/test_adversarial.py": "190e93315e6515dafd74db5783b0e5e4b1ca68f0fae263f0386a1d389c77b567",
     "provenance/tests/test_cli.py": "8d9d25df1083bcda2d55b0b5b7edb4e3f5b50c1f0029913a5ff305e6586ca54a",
     "provenance/tests/test_provenance.py": "192f4eb33d52eaa68a5dd5778e3fdd991919571086bc976e316393f8e52504bb",
-    "provenance/validate.py": "e4ab0ad03dfbe981f13fe3cc2f2f792002dfa1f654ba588ee61866011b3ce926",
-    "provenance/verifier.py": "2b450fcda3719562536c7d5fe4e601eba9052ad4f2d9836a30fee407445c866e"
+    "provenance/validate.py": "f0f7959c0a4477970ce016e1f84df014ce1884261b2f52ccf6147261632c0b78",
+    "provenance/verifier.py": "06672a0251c3b7146a29156e46e8251df2fc2545230f04ac2cd86bbafe3b35d5"
   }
 }
