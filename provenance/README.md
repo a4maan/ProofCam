@@ -17,7 +17,7 @@ This is a free, local development system. It is not deployed and is not a produc
 - Request size/structure bounds, basic per-installation quotas, local transport rate limits, and no access logging of paths or bodies.
 - iPhone camera callback → watermark → final JPEG saved and reopened → hash → Secure Enclave signature → protected local pending files. Gallery imports stay in the existing watermark research flow and cannot enter that camera callback through the UI.
 
-The certificate always reports `app_integrity`, `hardware_key`, and `camera_origin` as `unavailable`, and `absence_of_ai` as `not_established`. Even the iPhone's locally hardware-protected key is **not server-attested**. Client declarations never upgrade these results.
+The base certificate reports `app_integrity`, `hardware_key`, and `camera_origin` as `unavailable`, and `absence_of_ai` as `not_established`. Even the iPhone's locally hardware-protected key is **not server-attested**. Client declarations never upgrade these results. An optional [App Attest layer](APP-ATTEST.md) now adds separately scoped cryptographic request evidence after server validation; broad app integrity and camera-origin claims remain unavailable.
 
 ## Run locally
 
@@ -83,7 +83,7 @@ The follow-up audit expands the backend suite to **37 tests**, including actual 
 
 The [dependency advisory snapshot](dependency-audit.json) records an [OSV query](https://google.github.io/osv.dev/post-v1-querybatch/) for the four pinned Python packages. No advisories were returned for those versions at the recorded time. This does not cover the host OS, Apple SDK or native libraries bundled in wheels; a clean result does not prove the dependencies are vulnerability-free.
 
-**Not implemented or qualified:** server validation of Apple App Attest/Android attestation, protected sensor-to-signature provenance, production protected signing/trust distribution, canonical-pixel matching, automatic mobile registration/reconciliation, accountless recovery credentials, authoritative deletion-journal replay after backup restore, public hosting/TLS/operational hardening, full policy retention jobs, independent security review, and Android integration. Failed or unsupported attestations cannot be submitted as successful booleans; this protocol has no attestation-success issuance path.
+**Not implemented or qualified:** live qualification and complete receipt/risk/revocation handling for Apple App Attest, Android attestation, protected sensor-to-signature provenance, production protected signing/trust distribution, canonical-pixel matching, automatic mobile registration/reconciliation, accountless recovery credentials, authoritative deletion-journal replay after backup restore, public hosting/TLS/operational hardening, full policy retention jobs, independent security review, and Android integration. App Attest cryptographic evidence has a separate strict issuance path. Failed or unsupported evidence cannot be supplied as a successful boolean or downgraded after an observed cryptographic failure.
 
 The local reference service uses Python/SQLite to make this experiment runnable with current free tools. This is an explicit development implementation, not a silent replacement of the planned Rust/PostgreSQL production architecture. The `proofcam.dev.v1` wire domain and development-only issuer separate it from future production trust.
 

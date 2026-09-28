@@ -1,0 +1,6 @@
+{
+  "app_id": "REPLACE_WITH_ACTUAL_APP_ID_PREFIX.com.a4maan.proofcam.research",
+  "environment": "development",
+  "bundle_versions": ["1"],
+  "validation_categories": [3]
+}

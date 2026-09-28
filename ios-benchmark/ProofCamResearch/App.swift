@@ -103,6 +103,8 @@ struct ContentView: View {
     @StateObject private var model = Model()
     @StateObject private var provenance = CaptureProvenance()
     @State private var importingEnrollment = false
+    @State private var importingAppAttest = false
+    @State private var attestedCapture: PendingCapture?
     @State private var importing = false, screenshot = false, exporting = false, attested = false
     @State private var rectangle = "", filename = "report.json"
     @State private var document = ExportFile(data: Data())
@@ -116,7 +118,7 @@ struct ContentView: View {
                     Picker("Watermark for next source", selection: $model.candidateVersion) { Text("v1").tag(1); Text("v2").tag(2); Text("v3").tag(3) }.pickerStyle(.segmented).disabled(model.busy)
                     Text("Applies to the next source. v2 favors stronger marking; v3 uses smaller tiles and adaptive strength. Both search for edited images and can take longer than v1.").font(.footnote)
                     if model.busy { ProgressView("Running locally…") }
-                    Button("Choose image and run 20 samples") { importingEnrollment = false; screenshot = false; rectangle = ""; attested = false; importing = true }.disabled(model.busy)
+                    Button("Choose image and run 20 samples") { importingAppAttest = false; importingEnrollment = false; screenshot = false; rectangle = ""; attested = false; importing = true }.disabled(model.busy)
                     if let data = model.marked, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFit() }
                     Button("Save marked JPEG") { export(model.marked, name: "proofcam-marked.jpg", type: .jpeg) }.disabled(model.marked == nil || model.busy)
                 }
@@ -124,7 +126,7 @@ struct ContentView: View {
                     Text("Save the marked JPEG, open it in a viewer, take an iOS screenshot, then save that screenshot to Files and import it here.")
                     TextField("Optional left,top,right,bottom", text: $rectangle).textInputAutocapitalization(.never)
                     Toggle("I captured this using iOS screenshot", isOn: $attested)
-                    Button("Import screenshot") { importingEnrollment = false; screenshot = true; importing = true }.disabled(model.report == nil || model.busy)
+                    Button("Import screenshot") { importingAppAttest = false; importingEnrollment = false; screenshot = true; importing = true }.disabled(model.report == nil || model.busy)
                 }
                 Section {
                     Button("Export research JSON") {
@@ -132,13 +134,19 @@ struct ContentView: View {
                             export(try encoder.encode(model.report), name: "proofcam-report.json", type: .json)
                         } catch { model.status = error.localizedDescription }
                     }.disabled(model.report == nil || model.busy)
-                    Text("This prototype tests watermark recovery. A detected identifier is not proof that a photo is authentic. No network services are used.").font(.footnote)
+                    Text("This prototype tests watermark recovery. A detected identifier is not proof that a photo is authentic. Optional App Attest contacts Apple; default research runs use no network services.").font(.footnote)
                 }
             }.navigationTitle("ProofCam Research")
         }
-        .fileImporter(isPresented: $importing, allowedContentTypes: importingEnrollment ? [.data] : [.jpeg,.png]) { result in
+        .fileImporter(isPresented: $importing, allowedContentTypes: (importingEnrollment || importingAppAttest) ? [.data] : [.jpeg,.png]) { result in
             switch result { case .success(let url):
-                if importingEnrollment {
+                if importingAppAttest {
+                    let capture = attestedCapture
+                    Task {
+                        do { export(try await provenance.appAttestExport(from: url, capture: capture), name: capture == nil ? "app-attest-enrollment.cbor" : "app-attest-registration.cbor", type: .data) }
+                        catch { provenance.status = "App Attest evidence was not prepared. Check provisioning, Apple service availability and the challenge. No basic-registration fallback was attempted." }
+                    }
+                } else if importingEnrollment {
                     do { export(try provenance.enrollment(from: url), name: "proofcam-enrollment.cbor", type: .data) }
                     catch { provenance.status = "Enrollment preparation failed. Check the invitation and unlock the physical iPhone." }
                 } else { model.load(url, screenshot: screenshot, rectangle: rectangle, attested: attested) }
@@ -155,9 +163,18 @@ struct ContentView: View {
     private var captureSection: some View {
                 Section("Capture provenance — development") {
                     Text(provenance.status)
-                    Button("Prepare device enrollment") { importingEnrollment = true; importing = true }
+                    Button("Prepare device enrollment") { importingAppAttest = false; importingEnrollment = true; importing = true }
                         .disabled(model.busy || provenance.busy)
                     Text("Select the private invitation file from your local server, then save the signed enrollment request. Keep both files private.").font(.footnote)
+                    if AppAttestDeviceKey.enabled {
+                        Button("Export App Attest challenge request") {
+                            do { export(try provenance.appAttestChallengeRequest(purpose: "attest"), name: "attest-challenge-request.cbor", type: .data) }
+                            catch { provenance.status = "App Attest challenge preparation failed." }
+                        }.disabled(provenance.busy)
+                        Button("Import App Attest challenge JSON") { attestedCapture = nil; importingAppAttest = true; importing = true }.disabled(provenance.busy)
+                    } else {
+                        Text("App Attest is inactive in this build. Activation requires eligible Apple provisioning; basic signatures do not attest the app.").font(.footnote)
+                    }
                     Button("Take and sign a photo") { provenance.startCamera() }.disabled(model.busy || provenance.busy)
                     if provenance.busy { ProgressView("Saving signed capture…") }
                     Button("Refresh saved captures") { provenance.refresh() }.disabled(provenance.busy)
@@ -167,12 +184,25 @@ struct ContentView: View {
                             do { export(try Data(contentsOf: capture.jpeg), name: capture.id + ".jpg", type: .jpeg) }
                             catch { provenance.status = "Unable to read the saved photo." }
                         }
+                        if AppAttestDeviceKey.enabled {
+                            Button("Export registration challenge request") {
+                                do { export(try provenance.appAttestChallengeRequest(purpose: "register"), name: "registration-challenge-request.cbor", type: .data) }
+                                catch { provenance.status = "Registration challenge preparation failed." }
+                            }.disabled(provenance.busy)
+                            Button("Import registration challenge JSON") { attestedCapture = capture; importingAppAttest = true; importing = true }.disabled(provenance.busy)
+                        }
                         if capture.hasRequest {
                             Button("Export signed request") {
                                 do { export(try Data(contentsOf: capture.request), name: capture.id + ".cbor", type: .data) }
                                 catch { provenance.status = "Unable to read the saved request." }
                             }
                         }
+                    }
+                    ForEach(provenance.appAttestExports, id: \.self) { saved in
+                        Button("Re-export " + saved.lastPathComponent) {
+                            do { export(try Data(contentsOf: saved), name: saved.lastPathComponent, type: .data) }
+                            catch { provenance.status = "Saved App Attest export is unavailable." }
+                        }.disabled(provenance.busy)
                     }
                     Text("Device signatures bind exported bytes. Registration and independent verification run on your Mac. This does not certify camera origin or absence of AI.").font(.footnote)
                 }

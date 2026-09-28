@@ -1,11 +1,11 @@
 {
   "scope": "Local development protocol; no production assurance or device evidence",
-  "validated_at_utc": "2026-09-28T02:55:29.283487+00:00",
+  "validated_at_utc": "2026-09-28T14:37:57.926821+00:00",
   "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
   "python": "3.12.3",
   "backend_tests": {
-    "discovered": 37,
-    "passed": 37,
+    "discovered": 52,
+    "passed": 52,
     "skipped": 0,
     "failures": 0
   },
@@ -16,8 +16,8 @@
     "openssl_cli": "request signing and certificate verification tested when installed"
   },
   "swift_release": {
-    "discovered": 38,
-    "passed": 34,
+    "discovered": 41,
+    "passed": 37,
     "skipped": 4,
     "failures": 0
   },
@@ -26,27 +26,34 @@
   "v3_simulation_source_hashes": "unchanged; no watermark algorithm modifications",
   "apple_tests": "six codec and two CryptoKit tests prepared; not run on this Linux host",
   "physical_device": "not tested",
-  "platform_attestation": "not implemented; never marked passed",
+  "platform_attestation": "strict App Attest cryptographic validator implemented; synthetic positive tests only; live Apple acceptance, receipt/risk and revocation checks pending",
   "production_issuer": "not implemented; development rejected by default",
   "source_sha256": {
-    "ios-benchmark/Core/Sources/ProofCamCore/ProvenanceWire.swift": "d30c946fce1fea817931d1ad007296812914de333e1ec286e0688609a436c591",
+    "ios-benchmark/Core/Sources/ProofCamCore/ProvenanceWire.swift": "e444953eecb7fcc828e3592c05be39d2f374171d169a55eb02a29f414840324e",
+    "ios-benchmark/Core/Tests/ProofCamCoreTests/AppAttestWireTests.swift": "be9a178e896afda2164e16ade4e328fbb3fcc13ec96b8e2c0119e867387ff158",
     "ios-benchmark/Core/Tests/ProofCamCoreTests/ProvenanceAppleTests.swift": "b5de9a39b491812bdf4ee0f574a0abe2cdeb10983f55247efb68b7a02f72e0de",
     "ios-benchmark/Core/Tests/ProofCamCoreTests/ProvenanceWireTests.swift": "d3e60f13b347c13be4439e305b424783018de89ee175e1c9c60b407c5a017757",
-    "ios-benchmark/ProofCamResearch/App.swift": "8ef50891515ad012e61d201aaf333f8f5fe0c309e0b9d3366456cf8deaf3ab58",
-    "ios-benchmark/ProofCamResearch/CaptureProvenance.swift": "5049f523ae433682d1aad5db5711304a1fbcfe876a4672369df7c1bda6d65185",
-    "ios-benchmark/ProofCamResearch.xcodeproj/project.pbxproj": "014a4e60b5c0a068fe9a8577bd05be7bf492013a393e92fa38e8ad15e8ba0755",
-    "ios-benchmark/tools/create_project.py": "de5a0d378a037b2c71d75073877ffa0b19afa2f23810a76bc682aa697fab51f2",
+    "ios-benchmark/ProofCamResearch/App.swift": "4833140237b66a0da32c46a6d2fde005be6521cb7c6706d540e5d6e913ad65b3",
+    "ios-benchmark/ProofCamResearch/AppAttest.entitlements": "0a0e093580a9674d736a7a2dd7b7e4fd0f42d4823b0bc9531ec7a98f8fd0fa1e",
+    "ios-benchmark/ProofCamResearch/AppAttestProvenance.swift": "f10920f0d75ffd9c03d69749d8ca7f5910becec6f41bef6f757fe874c8bea900",
+    "ios-benchmark/ProofCamResearch/CaptureProvenance.swift": "3e819ce13dfa193330371d6c0607f10416262640be0e97a77c2a66315a867053",
+    "ios-benchmark/ProofCamResearch.xcodeproj/project.pbxproj": "c7d344fe82d68a185108166f638b21f9683816b547dd8f4b531686a75a2516de",
+    "ios-benchmark/tools/create_project.py": "286b2f54c8099490db2d27ac242c7bfab1454c38f5abd02dfb872fa938d724ab",
     "provenance/__init__.py": "b171e4d1eed3d0a2d2f827a81146d239c0a9e28b9ad822c0b18079099ff8397f",
-    "provenance/__main__.py": "5283cc2aface25d729835a049f9a52b0c29ff49906dc3b2d78026736a0207cfa",
-    "provenance/http_server.py": "88b9844d7f338439da4a591e251ba150b7bf559337530e4d0767467fb85a0f93",
+    "provenance/__main__.py": "81ae84ef71c4686ec7e1f45e78c6b04dc79f6375ceb4485ab8c51e409c7c8397",
+    "provenance/app-attest.example.json": "9acd4f687ea12fda6593c24a786eb746d904bc7a9ad44b0f2396aedcfc978ad7",
+    "provenance/app_attest.py": "66b0d419f37d4499636842deb42bcf372c342b1934cce6774f16f3de30af304b",
+    "provenance/http_server.py": "b220c9e40c720fe7cfc01f688715e39dbb793b1dec3563e137316549d53abec6",
     "provenance/protocol.py": "4b99435500c3a4f2b085ef59c6da2eb6610deaeacbfe8bda1234eb78d92d808a",
     "provenance/requirements.txt": "09fb28a3b2e790ee8093b657fcd2a8fd142e98ca8956542e6ccadaea71ed2b99",
-    "provenance/service.py": "16bfe4c1df58b11ab359a6471ce1fc21478b38a1a76b412d61ed1ffc126d66b8",
+    "provenance/service.py": "9c0d7f3d824321c10aeba23580542832dcd7d7d73c7fd2981c4fc2d7c4bef489",
     "provenance/storage.py": "8287d41a271b2cf5085297b292d7b1d90d4771f955cb54c4acd8bcb7a71ecd09",
     "provenance/tests/test_adversarial.py": "190e93315e6515dafd74db5783b0e5e4b1ca68f0fae263f0386a1d389c77b567",
+    "provenance/tests/test_app_attest.py": "0a40c81b3833cbf1b5aaa98aa97d7ab827d2747b79addb7a9fea93ed9a0819a1",
     "provenance/tests/test_cli.py": "8d9d25df1083bcda2d55b0b5b7edb4e3f5b50c1f0029913a5ff305e6586ca54a",
     "provenance/tests/test_provenance.py": "192f4eb33d52eaa68a5dd5778e3fdd991919571086bc976e316393f8e52504bb",
-    "provenance/validate.py": "f0f7959c0a4477970ce016e1f84df014ce1884261b2f52ccf6147261632c0b78",
-    "provenance/verifier.py": "06672a0251c3b7146a29156e46e8251df2fc2545230f04ac2cd86bbafe3b35d5"
+    "provenance/trust/apple-app-attestation-root.pem": "c778d09ac341f7fd9f8f3b19e2b815af6aed4ad4490e1e92c05cb355212a5013",
+    "provenance/validate.py": "641f2dcd5dcc65d2b18b576fd0f86257f3c2c00b6c92cd4cc44625812e9c1e89",
+    "provenance/verifier.py": "1eba50e23bf5d3b9bd6d5fecdf760b5b487b1582e87f9216db85ebc55638d27d"
   }
 }

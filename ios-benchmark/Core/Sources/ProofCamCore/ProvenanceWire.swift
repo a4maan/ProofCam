@@ -63,12 +63,41 @@ public enum ProvenanceWire {
                        ("id", .text(id)), ("file_sha256", .text(fileSHA256)), ("session", .text(session)),
                        ("mode", .text("offline")), ("challenge", .null), ("source", .text("camera_unverified"))])
     }
+    public static func challengeRequest(session: String, purpose: String) throws -> Data {
+        guard hexadecimal(session, count: 32), ["attest", "register"].contains(purpose) else { throw Invalid.identifier }
+        return object([("type", .text(prefix + "challenge")), ("version", .unsigned(1)), ("session", .text(session)), ("purpose", .text(purpose))])
+    }
+    public static func attestContext(installation: String, session: String, challenge: Data, keyID: Data) throws -> Data {
+        guard hexadecimal(installation, count: 64), hexadecimal(session, count: 32), challenge.count == 32, keyID.count == 32 else { throw Invalid.identifier }
+        return object([("type", .text(prefix + "attest-context")), ("version", .unsigned(1)), ("installation", .text(installation)),
+                       ("session", .text(session)), ("challenge", .bytes(challenge)), ("key_id", .bytes(keyID))])
+    }
+    public static func attestRequest(session: String, challenge: Data, keyID: Data, attestation: Data) throws -> Data {
+        guard hexadecimal(session, count: 32), challenge.count == 32, keyID.count == 32, !attestation.isEmpty, attestation.count <= 14000 else { throw Invalid.identifier }
+        return object([("type", .text(prefix + "attest")), ("version", .unsigned(1)), ("session", .text(session)),
+                       ("challenge", .bytes(challenge)), ("key_id", .bytes(keyID)), ("attestation", .bytes(attestation))])
+    }
+    public static func onlineCameraRequest(id: String, fileSHA256: String, session: String, challenge: Data) throws -> Data {
+        guard hexadecimal(id, count: 32), hexadecimal(fileSHA256, count: 64), hexadecimal(session, count: 32), challenge.count == 32 else { throw Invalid.identifier }
+        return object([("type", .text(prefix + "register")), ("version", .unsigned(1)), ("id", .text(id)),
+                       ("file_sha256", .text(fileSHA256)), ("session", .text(session)), ("mode", .text("online")),
+                       ("challenge", .bytes(challenge)), ("source", .text("camera_unverified"))])
+    }
+    public static func assertionInput(request: Data) -> Data {
+        Data("proofcam.dev.v1.app-attest.assertion\0".utf8) + request
+    }
+    public static func attestedBundle(request: Data, assertion: Data) throws -> Data {
+        guard !request.isEmpty, !assertion.isEmpty else { throw Invalid.signature }
+        let bundle = object([("request", .bytes(request)), ("assertion", .bytes(assertion))])
+        guard bundle.count <= 16384 else { throw Invalid.signature }
+        return bundle
+    }
     public static func protectedHeader(keyID: String) throws -> Data {
         guard hexadecimal(keyID, count: 64) else { throw Invalid.identifier }
         return ProvenanceCBOR.map([(.unsigned(1), .negative(-7)), (.unsigned(4), .bytes(Data(keyID.utf8)))]).encoded
     }
     public static func signatureInput(payload: Data, keyID: String, purpose: String) throws -> Data {
-        guard ["register", "enroll"].contains(purpose) else { throw Invalid.signature }
+        guard ["register", "enroll", "challenge", "attest"].contains(purpose) else { throw Invalid.signature }
         return ProvenanceCBOR.array([.text("Signature1"), .bytes(try protectedHeader(keyID: keyID)),
                                      .bytes(Data((prefix + purpose).utf8)), .bytes(payload)]).encoded
     }

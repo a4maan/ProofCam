@@ -5,7 +5,7 @@ import CryptoKit
 import Security
 
 /// Development enrollment uses a real device key, but the server does not yet attest it.
-private enum CaptureKey {
+enum CaptureKey {
     enum Failure: Error { case unavailable, keychain(OSStatus), accessControl }
     static func identifier() throws -> String {
         var bytes = [UInt8](repeating: 0, count: 16)
@@ -54,11 +54,12 @@ struct PendingCapture: Identifiable {
 @MainActor final class CaptureProvenance: ObservableObject {
     @Published var status = "Camera captures can be saved with a device-signed request. Registration is a separate Mac step."
     @Published var pending = [PendingCapture]()
+    @Published var appAttestExports = [URL]()
     @Published var busy = false
     @Published var showCamera = false
     init() { refresh() }
 
-    private func directory() throws -> URL {
+    func directory() throws -> URL {
         var url = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask,
                                               appropriateFor: nil, create: true).appendingPathComponent("ProvenancePending", isDirectory: true)
         try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true,
@@ -70,6 +71,13 @@ struct PendingCapture: Identifiable {
     func refresh() {
         do {
             let urls = try FileManager.default.contentsOfDirectory(at: directory(), includingPropertiesForKeys: nil)
+            var attestFiles = urls.filter { $0.lastPathComponent.hasPrefix("app-attest-") && $0.pathExtension == "cbor" }
+            for folder in urls where !folder.lastPathComponent.hasPrefix("app-attest-") {
+                if let children = try? FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil) {
+                    attestFiles += children.filter { $0.lastPathComponent.hasPrefix("app-attest-") && $0.pathExtension == "cbor" }
+                }
+            }
+            appAttestExports = attestFiles.sorted { $0.lastPathComponent < $1.lastPathComponent }
             pending = urls.filter { FileManager.default.fileExists(atPath: $0.appendingPathComponent("photo.jpg").path) }
                 .map { PendingCapture(id: $0.lastPathComponent.trimmingCharacters(in: CharacterSet(charactersIn: ".")), folder: $0) }.sorted { $0.id < $1.id }
         } catch { status = "Saved captures are unavailable while storage is inaccessible. Unlock the phone and try again." }

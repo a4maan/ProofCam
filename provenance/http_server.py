@@ -45,7 +45,8 @@ def make_server(service, port=8765):
                     result = service.lookup(self.path[len('/v1/records/'):])
                 else:
                     routes = {'/v1/enroll':service.enroll, '/v1/challenges':service.challenge,
-                              '/v1/register':service.register, '/v1/remove':service.remove}
+                              '/v1/register':service.register, '/v1/remove':service.remove, '/v1/attest':service.attest,
+                              '/v1/register-attested':service.register_attested}
                     action = routes.get(self.path)
                     if action is None:
                         raise Rejected('unknown_route')

@@ -25,7 +25,7 @@ def main():
     backend=run('backend',[sys.executable,'-m','unittest','discover','-s','provenance/tests','-v'])
     swift=run('swift',[args.swift,'test','--package-path','ios-benchmark/Core','--scratch-path',str(logs/'swift-build'),'-c','release'])
     run('app-syntax',[str(Path(args.swift).with_name('swiftc')),'-frontend','-parse',
-                      'ios-benchmark/ProofCamResearch/App.swift','ios-benchmark/ProofCamResearch/CaptureProvenance.swift'])
+                      *[str(p.relative_to(root)) for p in sorted((root/'ios-benchmark/ProofCamResearch').glob('*.swift'))]])
     project=root/'ios-benchmark/ProofCamResearch.xcodeproj/project.pbxproj'
     old=project.read_bytes()
     run('project',[sys.executable,'ios-benchmark/tools/create_project.py'])
@@ -44,6 +44,8 @@ def main():
     paths += list((root/'ios-benchmark/ProofCamResearch').glob('*.swift'))
     paths += list((root/'ios-benchmark/Core/Sources/ProofCamCore').glob('Provenance*.swift'))
     paths += list((root/'ios-benchmark/Core/Tests/ProofCamCoreTests').glob('Provenance*.swift'))
+    paths += list((root/'ios-benchmark/Core/Tests/ProofCamCoreTests').glob('AppAttest*.swift'))
+    paths += [root/'provenance/trust/apple-app-attestation-root.pem', root/'provenance/app-attest.example.json', root/'ios-benchmark/ProofCamResearch/AppAttest.entitlements']
     report={'scope':'Local development protocol; no production assurance or device evidence',
             'validated_at_utc':datetime.now(timezone.utc).isoformat(),'host':platform.platform(),
             'python':platform.python_version(), 'backend_tests':{'discovered':count,'passed':count-backend_skipped,'skipped':backend_skipped,'failures':0},
@@ -55,7 +57,7 @@ def main():
             'app_syntax':'passed; not Apple SDK typechecking','project_generation':'deterministic',
             'v3_simulation_source_hashes':'unchanged; no watermark algorithm modifications',
             'apple_tests':'six codec and two CryptoKit tests prepared; not run on this Linux host',
-            'physical_device':'not tested','platform_attestation':'not implemented; never marked passed',
+            'physical_device':'not tested','platform_attestation':'strict App Attest cryptographic validator implemented; synthetic positive tests only; live Apple acceptance, receipt/risk and revocation checks pending',
             'production_issuer':'not implemented; development rejected by default',
             'source_sha256':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}}
     (root/'provenance/validation.json').write_text(json.dumps(report,indent=2)+'\n')

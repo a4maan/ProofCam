@@ -109,3 +109,11 @@ See [simulation](../benchmark/reports/step06-ios-adaptive-simulation.json), [qua
 The app now includes a separate development camera/signing path. Four portable tests compare CBOR and signature-input bytes with Python, reject malformed invitations/IDs/signature sizes, and exercise encoding boundaries. The Linux Release suite discovers 38 tests (34 passed, four optional skips). Two additional CryptoKit tests verify a Python ES256 vector and raw signature construction on Apple platforms; these and the six Apple codec tests remain unexecuted here.
 
 Backend security/integration evidence is recorded separately in [provenance validation](../provenance/validation.json). Run the Mac validation script, then test camera permission denial, real camera capture, enrollment, Secure Enclave availability/locking, app relaunch, interrupted/low-storage writes, backup exclusion, exported-file integrity, registration retries and modified-file rejection. No server attestation or production capture assurance is claimed.
+
+## App Attest follow-up
+
+The optional [App Attest layer](../provenance/APP-ATTEST.md) now has server cryptographic validation and a native challenge/export flow. The full backend suite passes 52 tests, including 15 App Attest tests with synthetic PKI. Portable Swift discovers 41 tests: 37 pass and four optional tests skip. App syntax parsing and deterministic project generation pass; this is not Apple SDK typechecking. Frozen watermark source hashes remain unchanged.
+
+Synthetic positive fixtures are explicitly labeled and cannot establish acceptance of genuine Apple evidence. Real Apple attestation, Xcode compilation, physical-device operation, receipt risk assessment and online revocation checks remain pending. Test session expiry, assertion ordering, saved-file retry after relaunch, Apple service errors, Keychain failures and interrupted writes on the phone. Failed evidence never silently upgrades or falls back to basic assurance.
+
+Integration defaults OFF. Apple App Attest requires an eligible existing Developer Program or Enterprise team/profile; a free Personal Team cannot activate it. No membership purchase is part of this work. Camera origin and absence of AI remain unestablished.

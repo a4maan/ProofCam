@@ -1,5 +1,6 @@
 """Command-line development client and issuer. Run `python -m provenance --help`."""
 import argparse
+import base64
 import json
 import secrets
 import sys
@@ -49,7 +50,9 @@ def main():
         p = sub.add_parser(name); p.add_argument('--state', default='provenance/local/server')
         if name in ('init-server','export-trust'): p.add_argument('--out', required=True, help='Local development trust file')
         if name=='invite': p.add_argument('--out',required=True,help='Private invitation file')
-        if name=='serve': p.add_argument('--port',type=int,default=8765)
+        if name=='serve':
+            p.add_argument('--port',type=int,default=8765)
+            p.add_argument('--app-attest-config',help='JSON app identity/environment/build policy; no custom roots')
         if name=='revoke': p.add_argument('--installation',required=True)
     p=sub.add_parser('keygen');p.add_argument('--key',required=True)
     for name in ['enroll','challenge','prepare','submit','lookup','remove']:
@@ -57,21 +60,25 @@ def main():
         p.add_argument('--url',default='http://127.0.0.1:8765')
         if name in ('enroll','challenge','prepare','remove'):p.add_argument('--key',required=True)
         if name=='enroll':p.add_argument('--invitation',required=True)
-        if name=='challenge':p.add_argument('--purpose',choices=['register','remove'],default='register')
+        if name=='challenge':p.add_argument('--purpose',choices=['register','remove','attest'],default='register')
         if name in ('challenge','prepare','submit','lookup'):p.add_argument('--out',required=True)
         if name in ('prepare','remove'):p.add_argument('--challenge')
         if name=='prepare':p.add_argument('--file',required=True);p.add_argument('--id',required=True)
         if name=='submit':
             p.add_argument('--request',required=True)
-            p.add_argument('--kind',choices=['register','enroll'],default='register')
+            p.add_argument('--kind',choices=['register','enroll','attest','register-attested','challenges'],default='register')
         if name in ('lookup','remove'):p.add_argument('--id',required=True)
+    p=sub.add_parser('challenge-json');p.add_argument('--input',required=True);p.add_argument('--out',required=True)
     p=sub.add_parser('verify');p.add_argument('--file',required=True);p.add_argument('--certificate',required=True)
     p.add_argument('--trust',required=True);p.add_argument('--allow-development',action='store_true');p.add_argument('--id')
     args=parser.parse_args()
     if args.command in ('init-server','invite','serve','export-trust','revoke'):
         state=Path(args.state);keypath=state/'issuer.pem'
         key=create_key(keypath) if args.command=='init-server' else load_key(keypath)
-        service=Service(state/'registry.sqlite3',key)
+        from .app_attest import AppAttestValidator
+        config=getattr(args,'app_attest_config',None)
+        validator=AppAttestValidator(json.loads(Path(config).read_text())) if config else None
+        service=Service(state/'registry.sqlite3',key,app_attest=validator)
         if args.command in ('init-server','export-trust'):
             private_write(args.out,encode(development_trust(key)));print('Development trust exported; expires in 24 hours. Distribute only through a trusted local channel.')
         elif args.command=='invite':
@@ -83,6 +90,13 @@ def main():
             try:server.serve_forever()
             finally:server.server_close()
         return
+    if args.command=='challenge-json':
+        from .protocol import fields, token, integer
+        value=decode(read(args.input)); fields(value, 'nonce expires session purpose')
+        token(value['nonce']); integer(value['expires']); hexstr(value['session'],32)
+        if value['purpose'] not in ('attest','register'): raise Rejected('invalid_challenge_purpose')
+        value['nonce']=base64.b64encode(value['nonce']).decode('ascii')
+        private_write(args.out,json.dumps(value,sort_keys=True).encode());return
     if args.command=='keygen':
         print('Development installation:',key_id(create_key(args.key)));return
     if args.command=='verify':
